@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Fast Book</title>
+  <title>Fast Book : Memo</title>
 </head>
 
 <body>
@@ -29,15 +29,56 @@
         </ul>
         <div class="header-menu__controls">
           <label for="inpSearch">메모 검색</label>
-          <input type="text" id="inpSearch" name="inpSearch" value="">
+          <input type="text" id="inpSearch" name="inpSearch" class="header-menu__controls-input" value="">
+          <button type="button" class="header-menu__controls-button">검색어 삭제</button>
         </div>
       </div>
     </div>
-    <div class="">
-
+    <div class="book-side">
+      <h2>메모 리스트</h2>
+      <ul class="book-side__list">
+        <li>
+          <a href="#none" class="book-side__link">
+            <strong class="book-side__title">메모 제목입니다.</strong>
+            <span class="book-side__content">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</span>
+            <span class="book-side__date">2018-06-12</span>
+          </a>
+        </li>
+        <li>
+          <a href="#none" class="book-side__link">
+            <strong class="book-side__title">메모 제목입니다.</strong>
+            <span class="book-side__content">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</span>
+            <span class="book-side__date">2018-06-12</span>
+          </a>
+        </li>
+        <li>
+          <a href="#none" class="book-side__link">
+            <strong class="book-side__title">메모 제목입니다.</strong>
+            <span class="book-side__content">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</span>
+            <span class="book-side__date">2018-06-12</span>
+          </a>
+        </li>
+        <li>
+          <a href="#none" class="book-side__link">
+            <strong class="book-side__title">메모 제목입니다.</strong>
+            <span class="book-side__content">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</span>
+            <span class="book-side__date">2018-06-12</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="">
-
+    <div class="book-container">
+      <form action="" class="book-container__form">
+        <fieldset class="book-container__fieldset">
+          <legend>메모 입력 폼</legend>
+          <label for="areaField">메모 입력</label>
+          <textarea name="areaField" id="areaField" class="book-container__fieldset-textarea" cols="30" rows="10"></textarea>
+          <div class="book-container__fieldset-btns">
+            <button type="button" class="book-container__cancel-button">Cancel</button>
+            <button type="button" class="book-container__save-button">Save</button>
+          </div>
+        </fieldset>
+      </form>
     </div>
   </div>
 </body>
