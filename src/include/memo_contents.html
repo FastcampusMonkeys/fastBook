@@ -1,12 +1,14 @@
-<div class="book-container">
-    <form class="book-container__form">
-      <fieldset class="book-container__fieldset">
+<div class="memo-contents">
+    <form class="memo-contents__form">
+      <fieldset class="memo-contents__fieldset">
         <legend class="blind">메모 입력 폼</legend>
-        <label for="areaField" class="blind">메모 입력</label>
-        <textarea name="areaField" id="areaField" class="book-container__fieldset-textarea" cols="30" rows="10"></textarea>
-        <div class="book-container__fieldset-btns">
-          <button type="button" class="book-container__cancel-button">Cancel</button>
-          <button type="button" class="book-container__save-button">Save</button>
+        <label for="formTitleInput" class="blind">제목</label>
+        <input type="text" name="formTitleInput" id="formTitleInput" class="memo-contents__fieldset-input" value="" placeholder="Title">
+        <label for="formTextarea" class="blind">내용</label>
+        <textarea name="formTextarea" id="formTextarea" class="memo-contents__fieldset-textarea" cols="30" rows="10" placeholder="Write Here"></textarea>
+        <div class="memo-contents__fieldset-btns">
+          <button type="button" class="memo-contents__cancel-button">Cancel</button>
+          <button type="button" class="memo-contents__save-button">Save</button>
         </div>
       </fieldset>
     </form>

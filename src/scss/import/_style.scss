@@ -1,4 +1,100 @@
 .header{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
   overflow: hidden;
   background:grey;
+  padding:15px;
+  .title{
+    float: left;
+  }
+  &-menu{
+    float: right;
+  }
+  &-mnue__btns{
+    display: inline-block;
+    li{
+      float: left;
+    }
+  }
+  &-menu__search{
+    float: right;
+  }
+}
+
+.container{
+  position: absolute;
+  overflow: hidden;
+  top:55px;
+  left: 0;
+  right:0;
+  bottom:30px;
+}
+.memo-side{
+  position: absolute;
+  background: green;
+  overflow-y: auto;
+  width:400px;
+  top:0;
+  left:0;
+  bottom:0px;
+  &__list{
+    
+  }
+}
+.memo-contents{
+  position: absolute;
+  overflow: hidden;
+  left:400px;
+  top:0;
+  right:0;
+  bottom:0;
+  
+  &__fieldset-textarea{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    width:100%;
+    padding:70px 30px;
+    margin-right:-30px;
+    box-sizing: border-box;
+    border:none;
+    resize: none;
+    background: none;
+    &:focus{
+      outline: none;
+    }
+  }
+  &__fieldset-input{
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 10;
+    top:0;
+    left:0px;
+    right:30px;
+    width:100%;
+    padding:30px 30px 10px;
+    border:none;
+    font-size:18px;
+    font-weight: bold;
+    &:focus{
+      outline: none;
+      border-bottom:2px dashed greenyellow;
+    }
+  }
+}
+footer{
+  position: fixed;
+  width:100%;
+  bottom:0;
+  right:0;
+  left:0;
+  height:30px;
+  line-height: 30px;
+  text-indent: 15px;
+  background:#454545;
+  color:#ccc;
 }
