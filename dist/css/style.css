@@ -109,16 +109,18 @@ a, a:hover, a:active, a:focus {
 	top: 0;
 	right: 0;
 	bottom: 0;
+	height: 100%;
 }
 
 .memo-contents__fieldset-textarea {
 	position: absolute;
-	top: 0;
+	top: 70px;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	width: 100%;
-	padding: 70px 30px;
+	height: auto;
+	padding: 0 30px;
 	margin-right: -30px;
 	box-sizing: border-box;
 	border: none;
@@ -138,7 +140,7 @@ a, a:hover, a:active, a:focus {
 	left: 0px;
 	right: 30px;
 	width: 100%;
-	padding: 30px 30px 10px;
+	padding: 30px 30px 20px;
 	border: none;
 	font-size: 18px;
 	font-weight: bold;
@@ -146,7 +148,6 @@ a, a:hover, a:active, a:focus {
 
 .memo-contents__fieldset-input:focus {
 	outline: none;
-	border-bottom: 2px dashed greenyellow;
 }
 
 footer {
