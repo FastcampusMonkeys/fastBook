@@ -14,7 +14,6 @@ const changed = require('gulp-changed');
 const nunjucks = require('gulp-nunjucks-render');
 const imageResize = require('gulp-image-resize');
 
-
 var config = {
 	device: 'mobile',
 	sprite_src: 'src/sprite/',
@@ -32,7 +31,7 @@ function getFolders(dir) {
 		});
 }
 
-gulp.task('watch', ['nunjuck_watch', 'asset_watch', 'scss_watch', 'sprite_watch']);
+gulp.task('watch', ['nunjucks_watch', 'asset_watch', 'scss_watch', 'sprite_watch']);
 gulp.task('sprite', ['makeSprite', 'makeSpriteMap']);
 gulp.task('dev', ['sprite', 'sass', 'watch']);
 
@@ -132,7 +131,7 @@ gulp.task('beautify', function () {
 })
 
 gulp.task('nunjucks_watch', function () {
-	gulp.watch([path.join(config.layout_src, 'html_demo/*.html')], ['nunjucks']).on('change', function (event) {
+	gulp.watch([path.join(config.layout_src, 'html/*.html')], ['nunjucks']).on('change', function (event) {
 		if (event.type === 'deleted') {
 			var filePathFromSrc = path.relative(path.resolve(config.layout_src), event.path);
 			var destFilePath = path.resolve(config.layout_dest, filePathFromSrc);
@@ -173,5 +172,5 @@ gulp.task('img_resize', function () {
 });
 
 gulp.task("clean", function () {
-	return del(["dist/*"], { force: true });
+	return del(["dist/*.js", "dist/*.css"], { force: true });
 });
