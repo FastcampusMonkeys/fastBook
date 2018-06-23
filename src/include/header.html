@@ -1,0 +1,29 @@
+<div class="header">
+	<h1>
+		<a href="./">FastBook</a>
+	</h1>
+	{% if headerItem == 'menu' %}
+	<div class="header-menu">
+		<h2>사용자 메뉴</h2>
+		<ul class="header-mnue__btns">
+			<li>
+				<a href="#none">메모 추가</a>
+			</li>
+			<li>
+				<a href="#none">메모 삭제</a>
+			</li>
+			<li>
+				<a href="#none">정보 변경</a>
+			</li>
+			<li>
+				<a href="#none">로그아웃</a>
+			</li>
+		</ul>
+		<div class="header-menu__controls">
+			<label for="inpSearch">메모 검색</label>
+			<input type="text" id="inpSearch" name="inpSearch" class="header-menu__controls-input" value="">
+			<button type="button" class="header-menu__controls-button">검색어 삭제</button>
+		</div>
+	</div>
+	{% endif %}
+</div>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>{{title}}</title>
+{% block css %}
+<link rel="stylesheet" type="text/css" href="css/style.css">
+{% endblock %}
+</head>
+<body class="{{bodyClass}}">
+<section id="wrap">
+    {% block header %}
+    {% endblock %}
+    
+    <section id="container" role="main">
+        {% block form_contents %}
+        {% endblock %}
+        
+        {% block memo_side %}
+        {% endblock %}
+
+        {% block memo_contents %}
+        {% endblock %}
+    </section>
+
+    {% block footer %}
+    {% endblock %}
+</section>
+</body>
+</html>
