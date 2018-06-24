@@ -7,7 +7,6 @@ export default function LoginPage() {
   return (
     <React.Fragment>
       <LoginFormContainer />
-      <SignupFormContainer />
     </React.Fragment>
   );
 }

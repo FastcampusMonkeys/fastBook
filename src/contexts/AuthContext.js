@@ -60,10 +60,11 @@ class AuthProvider extends React.Component {
       loading: prevState.loading + 1,
     }));
     try {
-      const res = await postAPI.post('/users', {
+      const res = await postAPI.post('/users/register', {
         username,
         password,
       });
+
       localStorage.setItem('token', res.data.token);
       await this.fetchMe();
     } finally {
