@@ -1,3 +1,41 @@
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+.no-drag {
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none; 
+  -webkit-user-select: none; 
+  -khtml-user-select: none; 
+  user-select:none;
+}
+#drag{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  width:8px;
+  // height:100%;
+  background:#465298;
+  background: repeating-linear-gradient(
+    180deg,
+    #606dbc,
+    #606dbc 10px,
+    #465298 10px,
+    #465298 20px
+  );
+  z-index: 100;
+  cursor: e-resize;
+  &:active{
+    background:#ff8800;
+    background: repeating-linear-gradient(
+    180deg,
+    #fcb86b,
+    #ffab4a 10px,
+    #ec8e23 10px,
+    #ff8800 20px
+  );
+  }
+}
 .header{
   position: fixed;
   top:0;
@@ -33,20 +71,22 @@
 }
 .memo-side{
   position: absolute;
-  background: green;
+  // background: green;
   overflow-y: auto;
-  width:400px;
+  width:310px;
   top:0;
   left:0;
   bottom:0px;
+  -webkit-transition: all .07s;
   &__list{
-    
+    min-width: 220px;
   }
 }
 .memo-contents{
+  -webkit-transition: all .07s;
   position: absolute;
   overflow: hidden;
-  left:400px;
+  left:310px;
   top:0;
   right:0;
   bottom:0;
@@ -88,6 +128,7 @@
     }
   }
 }
+
 footer{
   position: fixed;
   width:100%;
