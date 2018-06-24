@@ -13,7 +13,7 @@ class App extends Component {
         <AuthProvider>
           <Switch>
             <Route path="/login" component={LoginPage} />
-            <Route path="/posts/:id" component={PostPage} />
+            <Route path="/posts" component={PostPage} />
             <Route path="/signup" component={SignupPage} />
             <Route
               exact
