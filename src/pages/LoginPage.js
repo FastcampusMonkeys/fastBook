@@ -1,13 +1,13 @@
 import React from 'react';
 
 import LoginFormContainer from '../containers/LoginFormContainer';
-import SignupFormContainer from '../containers/SignupFormContainer';
+import SignupBtnContainer from '../containers/SignupBtnContainer';
 
 export default function LoginPage() {
   return (
     <React.Fragment>
       <LoginFormContainer />
-      <SignupFormContainer />
+      <SignupBtnContainer />
     </React.Fragment>
   );
 }

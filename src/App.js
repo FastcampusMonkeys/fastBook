@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 import { AuthProvider } from './contexts/AuthContext';
 import LoginPage from './pages/LoginPage';
-// import PostPage from './pages/PostPage';
+import PostPage from './pages/PostPage';
 import SignupPage from './pages/SignupPage';
 
 class App extends Component {
@@ -13,8 +13,8 @@ class App extends Component {
         <AuthProvider>
           <Switch>
             <Route path="/login" component={LoginPage} />
-            {/* <Route path="/posts/:id" component={PostPage} /> */}
-            <Route path="/users/:id" component={SignupPage} />
+            <Route path="/posts" component={PostPage} />
+            <Route path="/signup" component={SignupPage} />
             <Route
               exact
               path="/"

@@ -1,11 +1,11 @@
-// import React from 'react';
+import React from 'react';
 
-// import SignupFormContainer from '../containers/SignupFormContainer';
+import PostPageContainer from '../containers/PostPageContainer';
 
-// export default function PostPage() {
-//   return (
-//     <React.Fragment>
-//       <SignupFormContainer />
-//     </React.Fragment>
-//   );
-// }
+export default function PostPage() {
+  return (
+    <React.Fragment>
+      <PostPageContainer />
+    </React.Fragment>
+  );
+}
