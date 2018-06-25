@@ -22,8 +22,8 @@ class App extends Component {
                 localStorage.getItem('token') ? (
                   <Redirect to="/posts" />
                 ) : (
-                  <Redirect to="/login" />
-                )
+                    <Redirect to="/login" />
+                  )
               }
             />}
           </Switch>
