@@ -93,3 +93,7 @@ typings/
 
 # Serverless directories
 .serverless
+
+# package json
+package.json
+package-lock.json
