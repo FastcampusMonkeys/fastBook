@@ -1,11 +1,12 @@
 import React from 'react';
 
 import PostPageContainer from '../containers/PostPageContainer';
+import { PostPageProvider } from '../contexts/PostPageContext';
 
-export default function PostPage() {
+export default () => {
   return (
-    <React.Fragment>
+    <PostPageProvider>
       <PostPageContainer />
-    </React.Fragment>
+    </PostPageProvider>
   );
-}
+};
