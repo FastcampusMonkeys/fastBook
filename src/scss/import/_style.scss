@@ -1,5 +1,25 @@
+html,body{
+  color:#333;
+}
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+.button-g{
+  display: inline-block;
+  vertical-align: top;
+  border:1px solid #d1d1d1;
+  border-radius: 4px;
+  background:#fff;
+  padding:11px;
+  box-sizing: border-box;
+  color:#8a8a8a;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: center;
+  &:hover{
+    color:#333;
+    border-color:#333;
+  }
 }
 .no-drag {
   -ms-user-select: none; 
@@ -58,6 +78,16 @@ input:-webkit-autofill {
   }
   &-menu__search{
     float: right;
+  }
+  .item-svg{
+    width:320px;
+    height:376px;
+    svg{
+      width:100%;
+      height:100%;
+    }
+    .st0{fill:#fff;}
+    .st1{fill:#2D387C;}
   }
 }
 
@@ -140,4 +170,92 @@ footer{
   text-indent: 15px;
   background:#454545;
   color:#ccc;
+}
+
+.login{
+  background:#465298; 
+}
+.login-section{
+  position: absolute;
+  top:50%;
+  left:50%;
+  width:100%;
+  max-width:320px;
+  min-width:320px;
+  margin-top:-330px;
+  margin-left:-160px;
+  color:#fff;
+  
+  .header{
+    position: static;
+    padding:0;
+    background:none;
+    text-align: center;
+    .title{
+      float: none;
+    }
+  }
+  .container{
+    position: relative;
+    top:0;
+    bottom:0;
+  }
+}
+.form-contents{
+  width:320px;
+  margin:0 auto;
+  label{
+    display: block;
+    margin-top:15px;
+    font-size: 15px;
+  }
+  &__fieldset-input{
+    display: block;
+    width:100%;
+    margin-top:8px;
+    box-sizing: border-box;
+    border:0;
+    border-radius: 4px;
+    padding:11px;
+    font-size: 16px;
+    &:focus{
+      outline: none;
+    }
+  }
+  .button-g{
+    transition: .1s all ease;
+    display: block;
+    width:100%;
+    margin-top:15px;
+    border:0;
+    background:#1d2557;
+    color:#fff;
+    &:hover,
+    &:focus{
+      background:#2d387c;
+    }
+  }
+  .from-contents__login-button{
+    
+  }
+}
+
+@media screen and (max-width:375px){
+  .login-section{
+    .header{
+      transform: scale(.7);
+      margin-bottom:-50px;
+    }
+  }
+}
+
+@media screen and (max-width:320px){
+  .login-section{
+    .container{
+      padding:0 20px;
+    }
+    .form-contents{
+      width:100%;
+    }
+  }
 }
