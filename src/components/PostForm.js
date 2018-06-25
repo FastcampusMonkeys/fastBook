@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 
 export default class PostForm extends Component {
+  submitContent = e => {
+    e.preventDefault();
+  };
   render() {
     return (
       <div>
-        <button>write</button>
-        <input type="text" defaultValue="title" />
-        <textarea
-          name="content"
-          id=""
-          cols="10"
-          rows="5"
-          defaultValue="content"
-        />
+        <form onSubmit={this.submitContent}>
+          <textarea name="content" defaultValue="content" />
+          <button>write</button>
+        </form>
       </div>
     );
   }

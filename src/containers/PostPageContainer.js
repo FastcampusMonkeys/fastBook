@@ -11,15 +11,7 @@ export default class PostPageContainer extends React.Component {
         <LogoutBtnContainer />
         <PostForm />
         <PostPageConsumer>
-          {({ posts }) => (
-            <ul>
-              {posts.map(post => (
-                <li>
-                  <p>내용 : {post.body}</p>
-                </li>
-              ))}
-            </ul>
-          )}
+          {({ posts }) => <ul>{posts.map(post => <li>{post.body}</li>)}</ul>}
         </PostPageConsumer>
       </div>
     );
