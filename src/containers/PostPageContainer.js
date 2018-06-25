@@ -15,7 +15,6 @@ export default class PostPageContainer extends React.Component {
             <ul>
               {posts.map(post => (
                 <li>
-                  <p>제목 : {post.title}</p>
                   <p>내용 : {post.body}</p>
                 </li>
               ))}
