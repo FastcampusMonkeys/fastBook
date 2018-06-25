@@ -1,0 +1,25 @@
+<div class="form-contents">
+  <form action="from-contents__form">
+    <fieldset class="form-contents__fieldset">
+      {% if formItem == 'login' %}
+      <legend class="blind">로그인 입력폼</legend>
+      <label for="idInput">ID</label>
+      <input type="text" name="idInput" id="idInput" class="form-contents__fieldset-input" value="">
+      <label for="pwInput">PASSWORD</label>
+      <input type="password" name="pwInput" id="pwInput" class="form-contents__fieldset-input" value="">
+      <button type="submit" class="button-g from-contents__login-button">Login</button>
+      <a class="button-g from-contents__signup-button">Sign up</a>
+      {% elif formItem == 'signup' %}
+      <legend class="blind">회원가입 입력폼</legend>
+      <label for="joinIdInput">ID</label>
+      <input type="text" name="joinIdInput" id="joinIdInput" class="form-contents__fieldset-input" value="">
+      <label for="joinPwInput">PASSWORD</label>
+      <input type="password" name="joinPwInput" id="joinPwInput" class="form-contents__fieldset-input" value="">
+      <label for="joinRePwInput">CONFIRM PASSWORD</label>
+      <input type="password" name="joinRePwInput" id="joinRePwInput" class="form-contents__fieldset-input" value="">
+      <button type="button" class="button-g">Cancel</button>
+      <button type="submit" class="button-g">Sign up for FASTBOOK</button>
+      {% endif %}
+    </fieldset>
+  </form>
+</div>
