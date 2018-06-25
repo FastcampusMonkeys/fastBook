@@ -1,8 +1,9 @@
+{% if headerItem == 'menu' %}
 <header class="header">
 	<h1 class="title">
 		<a href="./">FastBook</a>
 	</h1>
-	{% if headerItem == 'menu' %}
+	
 	<div class="header-menu">
 		<h2 class="blind">사용자 메뉴</h2>
 		<ul class="header-mnue__btns">
@@ -35,5 +36,7 @@
 			</button>
 		</div>
 	</div>
-	{% endif %}
 </header>
+{% elif headerItem == 'login' %}
+ddd
+{% endif %}

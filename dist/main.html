@@ -51,7 +51,6 @@
 			</button>
                 </div>
             </div>
-
         </header>
 
         <section id="container" class="container" role="main">
@@ -227,10 +226,10 @@
                 <form class="memo-contents__form">
                     <fieldset class="memo-contents__fieldset">
                         <legend class="blind">메모 입력 폼</legend>
-                        <label for="formTitleInput" class="blind">제목</label>
-                        <input type="text" name="formTitleInput" id="formTitleInput" class="memo-contents__fieldset-input" value="" placeholder="Title">
-                        <label for="formTextarea" class="blind">내용</label>
-                        <textarea name="formTextarea" id="formTextarea" class="memo-contents__fieldset-textarea" cols="30" rows="10" placeholder="Write Here"></textarea>
+                        <label for="titleInput" class="blind">제목</label>
+                        <input type="text" name="titleInput" id="titleInput" class="memo-contents__fieldset-input" value="" placeholder="Title">
+                        <label for="contentTextarea" class="blind">내용</label>
+                        <textarea name="contentTextarea" id="contentTextarea" class="memo-contents__fieldset-textarea" cols="30" rows="10" placeholder="Write Here"></textarea>
                         <div class="memo-contents__fieldset-btns">
                             <button type="button" class="memo-contents__cancel-button">Cancel</button>
                             <button type="button" class="memo-contents__save-button">Save</button>
@@ -248,6 +247,7 @@
         </footer>
 
     </section>
+
     <script>
         (function() {
             let isResizing = false;
@@ -286,6 +286,7 @@
             }
         })();
     </script>
+
 </body>
 
 </html>

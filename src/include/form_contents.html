@@ -1,0 +1,16 @@
+<div class="form-contents">
+  <form action="from-contents__form">
+    <fieldset class="form-contents__fieldset">
+    {% if formItem == 'login' %}
+      <legend class="blind">로그인 입력폼</legend>
+      <label for="idInput">ID</label>
+      <input type="text" name="idInput" id="idInput" class="form-contents__fieldset-input" value="">
+      <label for="pwInput">PASSWORD</label>
+      <input type="password" name="pwInput" id="pwInput" class="form-contents__fieldset-input" value="">
+      <button type="submit">LOGIN</button>
+      <button type="button">SIGNUP</button>
+    {% elif formItem == 'signup' %}
+    {% endif %}
+    </fieldset>
+  </form>
+</div>

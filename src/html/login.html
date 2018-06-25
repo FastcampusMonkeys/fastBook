@@ -1,0 +1,13 @@
+{% extends "template.html" %} 
+{% set title = 'FASTBOOK : Login' %} 
+{% set bodyClass = 'login' %}
+{% set wrapClass = 'login-section' %}
+
+{% block header %}
+{% set headerItem = 'login' %}
+  {% include "header.html" %} 
+{% endblock %}
+
+{% block form_contents %}
+  {% include "form_contents.html" %} 
+{% endblock %}
