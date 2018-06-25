@@ -1,0 +1,20 @@
+@charset "UTF-8";
+//extand 모음
+%indent {
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 100%;
+}
+
+%blind {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+}
