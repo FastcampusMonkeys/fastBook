@@ -1,11 +1,17 @@
 import React from 'react';
 
 import PostPageContainer from '../containers/PostPageContainer';
-
-export default function PostPage() {
+import LogoutBtnContainer from '../containers/LogoutBtnContainer';
+import withAuth from '../hocs/withAuth';
+import PostPageProvider from '../contexts/PostPageContext';
+function PostPage() {
   return (
     <React.Fragment>
-      <PostPageContainer />
+      <PostPageProvider>
+        <PostPageContainer />
+      </PostPageProvider>
+      <LogoutBtnContainer />
     </React.Fragment>
   );
 }
+export default withAuth(PostPage);
