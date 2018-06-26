@@ -298,7 +298,6 @@ footer {
 }
 
 .form-contents .button-g {
-	transition: .1s all ease;
 	display: block;
 	width: 100%;
 	margin-top: 15px;
@@ -308,6 +307,7 @@ footer {
 }
 
 .form-contents .button-g:hover, .form-contents .button-g:focus {
+	transition: .2s all ease;
 	background: #2d387c;
 }
 

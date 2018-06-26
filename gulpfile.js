@@ -172,5 +172,5 @@ gulp.task('img_resize', function () {
 });
 
 gulp.task("clean", function () {
-	return del(["dist/*.js", "dist/*.css"], { force: true });
+	return del(["dist/*.js", "dist/*.css", "dist/components/", "dist/containers/", "dist/contexts/", "dist/pages/"], { force: true });
 });
