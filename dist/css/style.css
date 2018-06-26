@@ -173,7 +173,7 @@ input:-webkit-autofill {
 }
 
 .memo-side__list {
-	min-width: 220px;
+	min-width: 200px;
 }
 
 .memo-contents {
@@ -240,6 +240,27 @@ footer {
 
 .login {
 	background: #465298;
+	color: #fff;
+}
+
+.login-section .header,
+.signup-section .header {
+	position: static;
+	padding: 0;
+	background: none;
+	text-align: center;
+}
+
+.login-section .header .title,
+.signup-section .header .title {
+	float: none;
+}
+
+.login-section .container,
+.signup-section .container {
+	position: relative;
+	top: 0;
+	bottom: 0;
 }
 
 .login-section {
@@ -251,24 +272,40 @@ footer {
 	min-width: 320px;
 	margin-top: -330px;
 	margin-left: -160px;
-	color: #fff;
 }
 
-.login-section .header {
-	position: static;
-	padding: 0;
-	background: none;
-	text-align: center;
+.signup-section {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	max-width: 320px;
+	min-width: 320px;
+	margin-top: -290px;
+	margin-left: -160px;
 }
 
-.login-section .header .title {
-	float: none;
+.signup-section .header {
+	overflow: inherit;
 }
 
-.login-section .container {
-	position: relative;
-	top: 0;
-	bottom: 0;
+.signup-section .title-header {
+	display: block;
+	padding-bottom: 20px;
+	font-weight: normal;
+	font-size: 34px;
+}
+
+.signup-section .fa-id-card-alt {
+	display: block;
+	font-size: 150px;
+	margin-bottom: 20px;
+}
+
+.fa-cog {
+	display: block;
+	font-size: 150px;
+	margin-bottom: 20px;
 }
 
 .form-contents {
@@ -312,17 +349,19 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
-	.login-section .header {
+	.login-section .item-svg {
 		transform: scale(0.7);
 		margin-bottom: -50px;
 	}
 }
 
 @media screen and (max-width: 320px) {
-	.login-section .container {
+	.login-section .container,
+	.signup-section .container {
 		padding: 0 20px;
 	}
-	.login-section .form-contents {
+	.login-section .form-contents,
+	.signup-section .form-contents {
 		width: 100%;
 	}
 }

@@ -15,6 +15,7 @@
     <section id="wrap" class="">
 
         <header class="header">
+
             <h1 class="title">
                 <a href="./">FastBook</a>
             </h1>
@@ -51,6 +52,7 @@
 			</button>
                 </div>
             </div>
+
         </header>
 
         <section id="container" class="container" role="main">
@@ -267,12 +269,12 @@
                 elRight.style.left = elContainer.clientWidth - offsetRight + "px";
             }
             elHandle.onmouseup = function(e) {
-                if (e.clientX < 240) {
-                    elLeft.style.width = "240px";
-                    elRight.style.left = "240px";
-                } else if (e.clientX > 460) {
-                    elLeft.style.width = "460px";
-                    elRight.style.left = "460px";
+                if (e.clientX < 220) {
+                    elLeft.style.width = "220px";
+                    elRight.style.left = "220px";
+                } else if (e.clientX > 320) {
+                    elLeft.style.width = "320px";
+                    elRight.style.left = "320px";
                 }
                 if (e.clientX < 80) {
                     elLeft.style.width = "0px";
