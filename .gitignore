@@ -20,6 +20,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# package json
+# package 추가
 package-lock.json
 package.json

@@ -12,7 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <AuthProvider>
           <Switch>
-            <Route path="/login" component={LoginPage} />
+            <Route exact path="/login" component={LoginPage} />
             <Route path="/posts" component={PostPage} />
             <Route path="/signup" component={SignupPage} />
             <Route
