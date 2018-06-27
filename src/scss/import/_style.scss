@@ -64,21 +64,52 @@ input:-webkit-autofill {
   overflow: hidden;
   background:#465298;
   padding:15px;
+  height:25px;
   // border-bottom:1px solid #aaa;
   .title{
     float: left;
+    height: 25px;
+    .svg{
+      width:120px;
+      height:25px;
+    }
   }
   &-menu{
     float: right;
   }
   &-mnue__btns{
-    display: inline-block;
+    float: right;
+    font-size:0;
     li{
-      float: left;
+      display: inline-block;
+      button{
+        font-size:24px;
+        color:#fff;
+        border:none;
+        background:none;
+        cursor: pointer;
+      }
+      padding:0 6px;
     }
   }
   &-menu__search{
-    float: right;
+    float: left;
+    padding-right: 40px;
+    label{
+      cursor: pointer;
+      margin: 4px 2px 0 0;
+      font-size:22px;
+      color:#fff;
+    }
+    &-input{
+      width:200px;
+      height:28px;
+      padding:1px 6px;
+      vertical-align: top;
+      border:0 none;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
   }
   .item-svg{
     width:320px;
@@ -136,7 +167,6 @@ input:-webkit-autofill {
     border:none;
     resize: none;
     background: none;
-    // background: red;
     &:focus{
       outline: none;
     }
@@ -192,6 +222,7 @@ footer{
     padding:0;
     background:none;
     text-align: center;
+    height: auto;
     .title{
       float: none;
     }
@@ -235,11 +266,11 @@ footer{
     font-size:150px;
     margin-bottom:20px;
   }
-}
-.fa-cog{
-  display:block;
+  .fa-cog{
+    display:block;
     font-size:150px;
     margin-bottom:20px;
+  }
 }
 .form-contents{
   width:320px;

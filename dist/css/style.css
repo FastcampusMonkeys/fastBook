@@ -113,10 +113,17 @@ input:-webkit-autofill {
 	overflow: hidden;
 	background: #465298;
 	padding: 15px;
+	height: 25px;
 }
 
 .header .title {
 	float: left;
+	height: 25px;
+}
+
+.header .title .svg {
+	width: 120px;
+	height: 25px;
 }
 
 .header-menu {
@@ -124,15 +131,43 @@ input:-webkit-autofill {
 }
 
 .header-mnue__btns {
-	display: inline-block;
+	float: right;
+	font-size: 0;
 }
 
 .header-mnue__btns li {
-	float: left;
+	display: inline-block;
+	padding: 0 6px;
+}
+
+.header-mnue__btns li button {
+	font-size: 24px;
+	color: #fff;
+	border: none;
+	background: none;
+	cursor: pointer;
 }
 
 .header-menu__search {
-	float: right;
+	float: left;
+	padding-right: 40px;
+}
+
+.header-menu__search label {
+	cursor: pointer;
+	margin: 4px 2px 0 0;
+	font-size: 22px;
+	color: #fff;
+}
+
+.header-menu__search-input {
+	width: 200px;
+	height: 28px;
+	padding: 1px 6px;
+	vertical-align: top;
+	border: 0 none;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 .header .item-svg {
@@ -259,6 +294,7 @@ footer {
 	padding: 0;
 	background: none;
 	text-align: center;
+	height: auto;
 }
 
 .login-section .header .title,
@@ -312,7 +348,7 @@ footer {
 	margin-bottom: 20px;
 }
 
-.fa-cog {
+.signup-section .fa-cog {
 	display: block;
 	font-size: 150px;
 	margin-bottom: 20px;
