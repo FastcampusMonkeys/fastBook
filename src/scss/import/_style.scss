@@ -77,7 +77,7 @@ input:-webkit-autofill {
   &-menu{
     float: right;
   }
-  &-mnue__btns{
+  &-menu__btns{
     float: right;
     font-size:0;
     li{
@@ -139,9 +139,52 @@ input:-webkit-autofill {
   top:0;
   left:0;
   bottom:0px;
+  background:#dedede;
   -webkit-transition: all .07s;
   &__list{
     min-width: 200px;
+    li{
+      margin:0 5px;
+      margin-bottom:4px;
+      border-radius: 5px;
+      background:#efefef;
+      &:first-child{
+        margin-top:4px;
+      }
+    }
+  }
+  &__link{
+    display:block;
+    color:#666;
+    padding:6px 10px;
+    border:1px solid #efefef;
+    border-radius: 5px;
+    transition: background .3s;
+    &:hover{
+      background:#fafafa;
+    }
+  }
+  .on{
+    .memo-side__link{
+      border:1px solid #2D387C;
+      background:#fff;
+      color:#181818;
+    }
+  }
+  &__title,
+  &__content,
+  &__date{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &__date{
+    font-size:12px;
+    color:#888;
+  }
+  &__content{
+    font-size:13px;
   }
 }
 .memo-contents{
@@ -155,13 +198,13 @@ input:-webkit-autofill {
   height: 100%;
   &__fieldset-textarea{
     position: absolute;
-    top:30px;
+    top:0;
     left:0;
     right: 0;
     bottom:0;
     width:100%;
     height: auto;
-    padding:0 30px;
+    padding:20px 30px;
     margin-right:-30px;
     box-sizing: border-box;
     border:none;
@@ -193,7 +236,16 @@ input:-webkit-autofill {
     bottom:10px;
     right:30px;
     .button-g{
-      width:80px;
+      width:70px;
+      height:40px;
+      padding:0;
+    }
+  }
+  &__save-button{
+    &:hover,
+    &:focus{
+      color:#465298;
+      border-color:#465298;
     }
   }
 }
@@ -311,6 +363,56 @@ footer{
   }
 }
 
+@media screen and (max-width:640px){
+  .header{
+    height:55px;
+    .title{
+      float: none;
+    }
+    .header-menu{
+      overflow: hidden;
+      float: none;
+      padding-top: 6px;
+      &__search{
+        padding-right:0;
+      }
+    }
+  }
+  .container{
+    top:85px;
+    .memo-side{
+      width:220px;
+    }
+    .memo-contents{
+      left:220px;
+    }
+  }
+}
+@media screen and (max-width:480px){
+  .header{
+    
+    height:85px;
+    text-align: center;
+    .header-menu{
+      float: none;
+      &__btns{
+        float: none;
+      }
+      &__search{
+        float: none;
+      }
+    }
+  }
+  .container{
+    top:115px;
+    .memo-side{
+      width:0;
+    }
+    .memo-contents{
+      left:0;
+    }
+  }
+}
 @media screen and (max-width:375px){
   .login-section{
     .item-svg{
