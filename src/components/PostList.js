@@ -6,8 +6,8 @@ export default class PostList extends React.Component {
     const { posts, deletePosts } = this.props;
     return (
       <ul>
-        {posts.map(posts => (
-          <PostItem key={posts.id} {...posts} deletePosts={deletePosts} />
+        {posts.map(post => (
+          <PostItem key={post.id} {...post} deletePosts={deletePosts} />
         ))}
       </ul>
     );
