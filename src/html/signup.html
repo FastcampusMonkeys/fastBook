@@ -1,0 +1,14 @@
+{% extends "template.html" %} 
+{% set title = 'FASTBOOK : singup' %} 
+{% set bodyClass = 'login' %}
+{% set wrapClass = 'signup-section' %}
+
+{% block header %}
+{% set headerItem = 'signup' %}
+  {% include "header.html" %} 
+{% endblock %}
+
+{% block form_contents %}
+{% set formItem = 'signup' %}
+  {% include "form_contents.html" %} 
+{% endblock %}

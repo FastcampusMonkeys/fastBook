@@ -1,5 +1,5 @@
-{% if headerItem == 'menu' %}
 <header class="header">
+{% if headerItem == 'menu' %}
 	<h1 class="title">
 		<a href="./">FastBook</a>
 	</h1>
@@ -36,9 +36,7 @@
 			</button>
 		</div>
 	</div>
-</header>
 {% elif headerItem == 'login' %}
-<header class="header">
 	<div class="blind">
 		<h1>
 			<span>FASTBOOK</span>
@@ -80,5 +78,25 @@
 		<path class="st1" d="M257.6,294.7l-3.8,7.6v4.5h-1.4v-4.4l-3.7-7.7h1.5l2.6,5.5c0,0.1,0.1,0.3,0.3,0.7h0c0.1-0.2,0.2-0.4,0.3-0.7  l2.7-5.5L257.6,294.7L257.6,294.7z"/>
 		</svg>
 	</div>
-</header>
+{% elif headerItem == 'signup' %}
+	<div class="blind">
+		<h1>
+			<span>FASTBOOK</span>
+		</h1>
+		<strong>
+			SAVE YOUR NOTES QUICKLY
+		</strong>
+	</div>
+	<strong class="title-header"><i class="fas fa-id-card-alt"></i>Sign up</strong>
+{% elif headerItem == 'setting' %}
+	<div class="blind">
+		<h1>
+			<span>FASTBOOK</span>
+		</h1>
+		<strong>
+			SAVE YOUR NOTES QUICKLY
+		</strong>
+	</div>
+	<strong class="title-header"><i class="fas fa-cog"></i>Account Setting</strong>
 {% endif %}
+</header>

@@ -6,12 +6,11 @@ import withAuth from '../hocs/withAuth';
 import PostPageProvider from '../contexts/PostPageContext';
 function PostPage() {
   return (
-    <React.Fragment>
-      <PostPageProvider>
-        <PostPageContainer />
-      </PostPageProvider>
+    <PostPageProvider>
+      <h1>fastBook</h1>
       <LogoutBtnContainer />
-    </React.Fragment>
+      <PostPageContainer />
+    </PostPageProvider>
   );
 }
 export default withAuth(PostPage);

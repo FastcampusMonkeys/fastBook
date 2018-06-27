@@ -15,6 +15,7 @@
     <section id="wrap" class="">
 
         <header class="header">
+
             <h1 class="title">
                 <a href="./">FastBook</a>
             </h1>
@@ -51,6 +52,7 @@
 			</button>
                 </div>
             </div>
+
         </header>
 
         <section id="container" class="container" role="main">
@@ -226,8 +228,6 @@
                 <form class="memo-contents__form">
                     <fieldset class="memo-contents__fieldset">
                         <legend class="blind">메모 입력 폼</legend>
-                        <label for="titleInput" class="blind">제목</label>
-                        <input type="text" name="titleInput" id="titleInput" class="memo-contents__fieldset-input" value="" placeholder="Title">
                         <label for="contentTextarea" class="blind">내용</label>
                         <textarea name="contentTextarea" id="contentTextarea" class="memo-contents__fieldset-textarea" cols="30" rows="10" placeholder="Write Here"></textarea>
                         <div class="memo-contents__fieldset-btns">
@@ -269,12 +269,12 @@
                 elRight.style.left = elContainer.clientWidth - offsetRight + "px";
             }
             elHandle.onmouseup = function(e) {
-                if (e.clientX < 240) {
-                    elLeft.style.width = "240px";
-                    elRight.style.left = "240px";
-                } else if (e.clientX > 460) {
-                    elLeft.style.width = "460px";
-                    elRight.style.left = "460px";
+                if (e.clientX < 220) {
+                    elLeft.style.width = "220px";
+                    elRight.style.left = "220px";
+                } else if (e.clientX > 320) {
+                    elLeft.style.width = "320px";
+                    elRight.style.left = "320px";
                 }
                 if (e.clientX < 80) {
                     elLeft.style.width = "0px";
