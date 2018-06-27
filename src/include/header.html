@@ -1,11 +1,8 @@
 <header class="header">
 {% if headerItem == 'menu' %}
 	<h1 class="title">
-		<a href="./">FastBook</a>
-		<?xml version="1.0" encoding="iso-8859-1"?>
-		<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-		<svg version="1.1" id="&#xB808;&#xC774;&#xC5B4;_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-			x="0px" y="0px" viewBox="0 0 117.833 23.167" style="enable-background:new 0 0 117.833 23.167;" xml:space="preserve">
+		<span class="blind">FASTBOOK</span>
+		<svg class="svg">
 		<g>
 			<path style="fill:#FFFFFF;" d="M0.109,23.381V0.432h12.357v2.236h-9.65v7.649h7.296v2.236H2.816v10.827H0.109z"/>
 			<path style="fill:#FFFFFF;" d="M16.938,23.381h-2.824l5.884-22.948h2.354l5.884,22.948h-2.824l-1.648-6.708h-5.178L16.938,23.381z
@@ -41,39 +38,51 @@
 				l-1.883,2.589v9.062H105.437z"/>
 		</g>
 		</svg>
-
 	</h1>
 
 	<div class="header-menu">
 		<h2 class="blind">사용자 메뉴</h2>
-		<ul class="header-mnue__btns">
+		
+		<ul class="header-menu__btns">
 			<li>
-				<a href="#none">
-					<span class="ico-memo ico-memo__add">메모 추가</span>
-				</a>
+				<button type="button">
+					<i class="fas fa-edit" title="메모 추가">
+						<span class="blind">메모 추가</span>
+					</i>
+				</button>
 			</li>
 			<li>
-				<a href="#none">
-					<span class="ico-memo ico-memo__clear">메모 삭제</span>
-				</a>
+				<button type="button">
+					<i class="fas fa-lock" title="메모 잠금">
+						<span class="blind">메모 잠금</span>
+					</i>
+				</button>
 			</li>
 			<li>
-				<a href="#none">
-					<span class="ico-memo ico-memo__modify">정보 변경</span>
-				</a>
+				<button type="button">
+					<i class="fas fa-trash-alt" title="메모 삭제">
+						<span class="blind">메모 삭제</span>
+					</i>
+				</button>
 			</li>
 			<li>
-				<a href="#none">
-					<span class="ico-memo ico-memo__logout">로그아웃</span>
-				</a>
+				<button type="button">
+					<i class="fas fa-cog" title="정보 변경">
+						<span class="blind">정보 변경</span>
+					</i>
+				</button>
+			</li>
+			<li>
+				<button type="button">
+					<i class="fas fa-power-off" title="로그 아웃">
+						<span class="blind">로그아웃</span>
+					</i>
+				</button>
 			</li>
 		</ul>
 		<div class="header-menu__search">
-			<label for="inpSearch" class="blind">메모 검색</label>
-			<input type="text" id="inpSearch" name="inpSearch" class="header-menu__search-input" value="">
-			<button type="button" class="header-menu__search-button">
-				<span class="ico-memo ico-memo__del">검색어 삭제</span>
-			</button>
+			<label for="inpSearch" class="fas fa-search"><span class="blind">메모 검색</span></label>
+			<input type="text" id="inpSearch" name="inpSearch" class="header-menu__search-input" placeholder="Search for text..." value="">
 		</div>
 	</div>
 {% elif headerItem == 'login' %}
