@@ -1,18 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class PostForm extends Component {
+export default class PostForm extends React.Component {
+  static defaultProps = {
+    onCreate: () => {}, // 할일 추가 버튼 클릭시 호출되는 함수
+  };
+  state = {
+    newPostBody: '',
+  };
+  submitContent = e => {
+    this.setState({ newPostBody: e.target.value });
+  };
+
+  handleSubmit = e => {
+    this.props.onCreate(this.state.newPostBody);
+    this.setState({
+      newPostBody: '',
+    });
+  };
   render() {
+    const { newPostBody } = this.state;
     return (
       <div>
-        <button>write</button>
-        <input type="text" defaultValue="title" />
-        <textarea
-          name="content"
-          id=""
-          cols="10"
-          rows="5"
-          defaultValue="content"
-        />
+        <form onSubmit={this.submitContent}>
+          <textarea value={newPostBody} name="content" defaultValue="content" />
+          <button conClick={this.handleSubmit}>write</button>
+        </form>
       </div>
     );
   }
