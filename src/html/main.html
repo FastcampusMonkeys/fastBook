@@ -23,6 +23,29 @@
             elLeft.style.width = elContainer.clientWidth - offsetRight + "px";
             elRight.style.left = elContainer.clientWidth - offsetRight + "px";
 
+
+    elHandle.onmousedown = function(e) {
+        isResizing = true;
+        elbody.classList.add('no-drag');
+    };
+    
+    document.onmousemove = function(e) {
+        if (!isResizing) {
+            return;
+        }
+        const offsetRight = elContainer.clientWidth - (e.clientX - elContainer.offsetLeft);
+        elLeft.style.width = elContainer.clientWidth - offsetRight + "px";
+        elRight.style.left = elContainer.clientWidth - offsetRight + "px"; 
+        
+    }
+    elHandle.onmouseup = function(e) {
+        if(e.clientX < 220){
+            elLeft.style.width = "220px"; 
+            elRight.style.left = "220px"; 
+        }else if(e.clientX > 320){
+            elLeft.style.width = "320px"; 
+            elRight.style.left = "320px"; 
+
         }
         elHandle.onmouseup = function(e) {
             if (e.clientX < 240) {
