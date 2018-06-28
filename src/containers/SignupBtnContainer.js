@@ -13,7 +13,7 @@ export default class SignupBtnContainer extends Component {
       return (
         <AuthConsumer>
           {({ usersingup }) => (
-            <button
+            <button className="button-g from-contents__signup-button"
               onClick={e => {
                 this.setState({ success: true });
               }}
