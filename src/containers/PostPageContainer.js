@@ -14,9 +14,9 @@ export default class PostPageContainer extends React.Component {
               <div>Loading..</div>
             ) : (
               <PostList posts={posts} deletePosts={deletePosts} />
-            )}
+            )};
           </div>
-        )};
+        )}
       </PostPageConsumer>
     );
   }
