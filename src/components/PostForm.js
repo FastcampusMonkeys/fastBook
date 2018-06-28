@@ -1,5 +1,6 @@
 import React from 'react';
 
+// export default 는 값을 export하는거고 export 는 여러가지가 가능하다
 export default class PostForm extends React.Component {
   static defaultProps = {
     onCreate: () => {}, // 할일 추가 버튼 클릭시 호출되는 함수
@@ -7,11 +8,15 @@ export default class PostForm extends React.Component {
   state = {
     newPostBody: '',
   };
-  submitContent = e => {
-    this.setState({ newPostBody: e.target.value });
+
+  handleInputChange = e => {
+    this.setState({
+      newPostBody: e.target.value,
+    });
   };
 
-  handleSubmit = e => {
+  handleButtonClick = e => {
+    // 함수 내려받기
     this.props.onCreate(this.state.newPostBody);
     this.setState({
       newPostBody: '',
@@ -21,10 +26,15 @@ export default class PostForm extends React.Component {
     const { newPostBody } = this.state;
     return (
       <div>
-        <form onSubmit={this.submitContent}>
-          <textarea value={newPostBody} name="content" defaultValue="content" />
-          <button conClick={this.handleSubmit}>write</button>
-        </form>
+        <label>
+          새 메모
+          <input
+            type="text"
+            value={newPostBody}
+            onChange={this.handleInputChange}
+          />
+          <button onClick={this.handleButtonClick}>추가</button>
+        </label>
       </div>
     );
   }

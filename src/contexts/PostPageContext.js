@@ -21,9 +21,9 @@ export default class PostPageProvider extends React.Component {
 
   createPosts = async newPostBody => {
     if (newPostBody) {
-      const newposts = { body: newPostBody };
+      const newpost = { body: newPostBody };
       this.setState({ loading: true });
-      await postAPI.post('/posts', newposts);
+      await postAPI.post('/posts', newpost);
       await this.fetchPosts();
     }
   };
