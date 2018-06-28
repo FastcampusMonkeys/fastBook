@@ -16,7 +16,7 @@ export default class PostPageContainer extends React.Component {
               <PostList posts={posts} deletePosts={deletePosts} />
             )}
           </div>
-        )};
+        )}
       </PostPageConsumer>
     );
   }
