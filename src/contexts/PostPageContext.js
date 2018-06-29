@@ -21,7 +21,12 @@ export default class PostPageProvider extends React.Component {
 
   createPosts = async newPostBody => {
     if (newPostBody) {
-      const newpost = { body: newPostBody };
+      let localeDate = new Date().toLocaleDateString();
+      let localeTime = new Date().toLocaleTimeString();
+      const newpost = {
+        body: newPostBody,
+        submitTime: localeDate + '  ' + localeTime,
+      };
       this.setState({ loading: true });
       await postAPI.post('/posts', newpost);
       await this.fetchPosts();

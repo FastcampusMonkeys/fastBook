@@ -2,17 +2,20 @@ import React from 'react';
 
 export default class PostItem extends React.Component {
   render() {
-    const { id, deletePosts, body } = this.props;
+    const { id, deletePosts, body, submitTime } = this.props;
     return (
       <li key={id}>
-        <p>{body}</p>
-        <button
-          onClick={e => {
-            deletePosts(id);
-          }}
-        >
-          삭제
-        </button>
+        <p>
+          <b>{body}</b>
+          <button
+            onClick={e => {
+              deletePosts(id);
+            }}
+          >
+            delete
+          </button>
+        </p>
+        {submitTime}
       </li>
     );
   }
