@@ -19,6 +19,8 @@ export default class PostPageProvider extends React.Component {
     });
   };
 
+
+
   createPosts = async newPostBody => {
     if (newPostBody) {
       const newpost = { body: newPostBody };
@@ -33,7 +35,9 @@ export default class PostPageProvider extends React.Component {
     await postAPI.delete(`/posts/${id}`);
     await this.fetchPosts();
   };
+
   render() {
+
     const value = {
       posts: this.state.posts,
       loading: this.state.loading,

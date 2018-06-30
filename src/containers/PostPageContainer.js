@@ -7,14 +7,14 @@ export default class PostPageContainer extends React.Component {
   render() {
     return (
       <PostPageConsumer>
-        {({ posts, loading, createPosts, deletePosts }) => (
+        {({ posts, loading, createPosts, deletePosts, body }) => (
           <div>
             <PostForm onCreate={createPosts} />
             {loading ? (
               <div>Loading..</div>
             ) : (
-              <PostList posts={posts} deletePosts={deletePosts} />
-            )}
+                <PostList posts={posts} body={body} deletePosts={deletePosts} />
+              )}
           </div>
         )}
       </PostPageConsumer>
