@@ -14,6 +14,7 @@ export default class PostItem extends React.Component {
           >
             삭제
         </button>
+          {submitTime}
         </li>
       </div>
 
