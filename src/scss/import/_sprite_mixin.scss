@@ -1,0 +1,86 @@
+// @charset "UTF-8";
+
+// @each $sprite-map in $map_list {
+// 	$map_name: map-get($sprite-map, name);
+// 	$image: map-get($sprite-map, image);
+// 	$map_width: map-get($sprite-map, width) / $ratio;
+// 	$map_height: map-get($sprite-map, height) / $ratio;
+
+// 	%#{$map_name}-sprite {
+// 		background-image: url(#{$image});
+// 		background-size: ceil($map_width) ceil($map_height);
+// 	}
+// }
+
+// @function map-deep-get($map, $keys...) {
+// 	@each $key in $keys {
+// 		$map: map-get($map, $key);
+// 	}
+// 	@return $map;
+// }
+
+// @mixin get-sprite($filename, $sprite-map, $property: (extend: false, get-image: true, set-offset-x: 0, set-offset-y: 0)) {
+// 	$map_name: map-get($sprite-map, name);
+// 	$extend: map-get($property, extend);
+// 	$get-image: map-get($property, 'get-image');
+// 	$set-offset-x: if(map-get($property, 'set-offset-x'), map-get($property, 'set-offset-x'), 0);
+// 	$set-offset-y: if(map-get($property, 'set-offset-y'), map-get($property, 'set-offset-y'), 0);
+// 	$offset-x: map-deep-get($sprite-map, 'sprites', $filename, 'offset-x') / $ratio;
+// 	$offset-y: map-deep-get($sprite-map, 'sprites', $filename, 'offset-y') / $ratio;
+// 	$width: map-deep-get($sprite-map, 'sprites', $filename, 'width') / $ratio;
+// 	$height: map-deep-get($sprite-map, 'sprites', $filename, 'height') / $ratio;
+
+// 	@if($extend == true) {
+// 		@extend %#{$map_name}-sprite !optional;
+// 	}
+	
+// 	@if($get-image == true) {
+// 		$image: map-get($sprite-map, image);
+// 		$map_width: map-get($sprite-map, width) / $ratio;
+// 		$map_height: map-get($sprite-map, height) / $ratio;
+// 		background-image: url(#{$image});
+// 		background-size: ceil($map_width) ceil($map_height);
+// 	}
+
+// 	background-position: floor($offset-x + $set-offset-x) floor($offset-y + $set-offset-y);
+// 	width: ceil($width);
+// 	height: ceil($height);
+// }
+
+// @mixin get-sprite-background-position($filename, $sprite-map, $property: (set-offset-x: 0, set-offset-y: 0)) {
+// 	$set-offset-x: if(map-get($property, 'set-offset-x'), map-get($property, 'set-offset-x'), 0);
+// 	$set-offset-y: if(map-get($property, 'set-offset-y'), map-get($property, 'set-offset-y'), 0);
+// 	$offset-x: map-deep-get($sprite-map, 'sprites', $filename, 'offset-x') / $ratio;
+// 	$offset-y: map-deep-get($sprite-map, 'sprites', $filename, 'offset-y') / $ratio;
+// 	background-position: floor($offset-x + $set-offset-x) floor($offset-y + $set-offset-y);
+// }
+
+// @mixin get-sprite-width($filename, $sprite-map) {
+// 	$width: map-deep-get($sprite-map, 'sprites', $filename, 'width') / $ratio;
+// 	width: ceil($width);
+// }
+
+// @mixin get-sprite-height($filename, $sprite-map) {
+// 	$height: map-deep-get($sprite-map, 'sprites', $filename, 'height') / $ratio;
+// 	height: ceil($height);
+// }
+
+// @mixin get-sprite2($filename, $sprite-map, $property: (extend: false, get-image: true, set-offset-x: 0, set-offset-y: 0)) {
+// 	$map_name: map-get($sprite-map, name);
+// 	$extend: map-get($property, extend);
+// 	$get-image: map-get($property, 'get-image');
+// 	$set-offset-x: if(map-get($property, 'set-offset-x'), map-get($property, 'set-offset-x'), 0);
+// 	$set-offset-y: if(map-get($property, 'set-offset-y'), map-get($property, 'set-offset-y'), 0);
+// 	$offset-x: map-deep-get($sprite-map, 'sprites', $filename, 'offset-x') / $ratio;
+// 	$offset-y: map-deep-get($sprite-map, 'sprites', $filename, 'offset-y') / $ratio;
+// 	$width: map-deep-get($sprite-map, 'sprites', $filename, 'width') / $ratio;
+// 	$height: map-deep-get($sprite-map, 'sprites', $filename, 'height') / $ratio;
+
+// 	@if($extend == true) {
+// 		@extend %#{$map_name}-sprite !optional;
+// 	}
+	
+// 	background-position: floor($offset-x + $set-offset-x) floor($offset-y + $set-offset-y);
+// 	width: ceil($width);
+// 	height: ceil($height);
+// }

@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+@mixin clearfix {
+	&:before, &:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin opacity($percent) {
+	opacity: $percent/100;
+	filter: alpha(opacity=$percent);
+}
+
+@mixin text-overflow($line) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	@if($line == 1) {
+		white-space: nowrap;
+	}
+	@else {
+		display: -webkit-box;
+		-webkit-line-clamp: $line;
+		-webkit-box-orient: vertical;
+	}
+}
+
+@mixin absoluteLT($left,$top){
+	position: absolute;
+	left: $left;
+	top: $top;
+}
+
+@mixin absoluteRT($right,$top){
+	position: absolute;
+	right: $right;
+	top: $top;
+}
+
+@mixin absoluteLB($left,$bottom){
+	position: absolute;
+	left: $left;
+	bottom: $bottom;
+}
+
+@mixin absoluteRB($right,$bottom){
+	position: absolute;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin absoluteLTB($left,$top,$bottom){
+	position: absolute;
+	left: $left;
+	top: $top;
+	bottom: $bottom;
+}
+
+@mixin absoluteRTB($right,$top,$bottom){
+	position: absolute;
+	right: $right;
+	top: $top;
+	bottom: $bottom;
+}
+
+@mixin absoluteLRT($left,$right,$top){
+	position: absolute;
+	left: $left;
+	right: $right;
+	top: $top;
+}
+
+@mixin absoluteLRB($left,$right,$bottom){
+	position: absolute;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin absoluteLRTB($left,$right,$top,$bottom){
+	position: absolute;
+	left: $left;
+	right: $right;
+	top: $top;
+	bottom: $bottom;
+}
+
+@mixin FixedLT($left,$top){
+	position: fixed;
+	left: $left;
+	top: $top;
+}
+
+@mixin FixedRT($right,$top){
+	position: fixed;
+	right: $right;
+	top: $top;
+}
+
+@mixin FixedLB($left,$bottom){
+	position: fixed;
+	left: $left;
+	bottom: $bottom;
+}
+
+@mixin FixedRB($right,$bottom){
+	position: fixed;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin FixedLTB($left,$top,$bottom){
+	position: fixed;
+	left: $left;
+	top: $top;
+	bottom: $bottom;
+}
+
+@mixin FixedRTB($right,$top,$bottom){
+	position: fixed;
+	right: $right;
+	top: $top;
+	bottom: $bottom;
+}
+
+@mixin FixedLRT($left,$right,$top){
+	position: fixed;
+	left: $left;
+	right: $right;
+	top: $top;
+}
+
+@mixin FixedLRB($left,$right,$bottom){
+	position: fixed;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin FixedLRTB($left,$right,$top,$bottom){
+	position: fixed;
+	left: $left;
+	right: $right;
+	top: $top;
+	bottom: $bottom;
+}
+
+@mixin borderOpacity($percent){
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border: 1px solid #000;
+	opacity: $percent/100;
+	filter: alpha(opacity=$percent);
+}

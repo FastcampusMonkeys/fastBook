@@ -1,0 +1,520 @@
+body, p,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li,
+dl, dt, dd,
+table, th, td,
+form, fieldset, legend, input, textarea, button, select {
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: none;
+}
+
+body,
+input,
+textarea,
+select,
+button,
+table {
+	font-family: -apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	line-height: 20px;
+	color: #333;
+}
+
+img,
+fieldset {
+	border: 0;
+	vertical-align: top;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+em, address {
+	font-style: normal;
+}
+
+a, a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+
+.blind {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+}
+
+html, body {
+	color: #333;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.button-g {
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid #d1d1d1;
+	border-radius: 4px;
+	background: #fff;
+	padding: 11px;
+	box-sizing: border-box;
+	color: #8a8a8a;
+	cursor: pointer;
+	font-size: 15px;
+	text-align: center;
+}
+
+.button-g:hover {
+	color: #333;
+	border-color: #333;
+}
+
+.no-drag {
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+#drag {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 8px;
+	background: #465298;
+	background: repeating-linear-gradient(180deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+	z-index: 100;
+	cursor: e-resize;
+}
+
+#drag:active {
+	background: #ff8800;
+	background: repeating-linear-gradient(180deg, #fcb86b, #ffab4a 10px, #ec8e23 10px, #ff8800 20px);
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	background: #465298;
+	padding: 15px;
+	height: 25px;
+}
+
+.header .title {
+	float: left;
+	height: 25px;
+}
+
+.header .title .svg {
+	width: 120px;
+	height: 25px;
+}
+
+.header-menu {
+	float: right;
+}
+
+.header-menu__btns {
+	float: right;
+	font-size: 0;
+}
+
+.header-menu__btns li {
+	display: inline-block;
+	padding: 0 6px;
+}
+
+.header-menu__btns li button {
+	font-size: 24px;
+	color: #fff;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.header-menu__search {
+	float: left;
+	padding-right: 40px;
+}
+
+.header-menu__search label {
+	cursor: pointer;
+	margin: 4px 2px 0 0;
+	font-size: 22px;
+	color: #fff;
+}
+
+.header-menu__search-input {
+	width: 200px;
+	height: 28px;
+	padding: 1px 6px;
+	vertical-align: top;
+	border: 0 none;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.header .item-svg {
+	width: 320px;
+	height: 376px;
+}
+
+.header .item-svg svg {
+	width: 100%;
+	height: 100%;
+}
+
+.header .item-svg .st0 {
+	fill: #fff;
+}
+
+.header .item-svg .st1 {
+	fill: #2D387C;
+}
+
+.container {
+	position: absolute;
+	overflow: hidden;
+	top: 55px;
+	left: 0;
+	right: 0;
+	bottom: 30px;
+}
+
+.memo-side {
+	position: absolute;
+	overflow-y: auto;
+	width: 310px;
+	top: 0;
+	left: 0;
+	bottom: 0px;
+	background: #dedede;
+	-webkit-transition: all .07s;
+}
+
+.memo-side__list {
+	min-width: 200px;
+}
+
+.memo-side__list li {
+	margin: 0 5px;
+	margin-bottom: 4px;
+	border-radius: 5px;
+	background: #efefef;
+}
+
+.memo-side__list li:first-child {
+	margin-top: 4px;
+}
+
+.memo-side__link {
+	display: block;
+	color: #666;
+	padding: 6px 10px;
+	border: 1px solid #efefef;
+	border-radius: 5px;
+	transition: background .3s;
+}
+
+.memo-side__link:hover {
+	background: #fafafa;
+}
+
+.memo-side .on .memo-side__link {
+	border: 1px solid #2D387C;
+	background: #fff;
+	color: #181818;
+}
+
+.memo-side__title, .memo-side__content, .memo-side__date {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.memo-side__date {
+	font-size: 12px;
+	color: #888;
+}
+
+.memo-side__content {
+	font-size: 13px;
+}
+
+.memo-contents {
+	-webkit-transition: all .07s;
+	position: absolute;
+	overflow: hidden;
+	left: 310px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+}
+
+.memo-contents__fieldset-textarea {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	padding: 20px 30px;
+	margin-right: -30px;
+	box-sizing: border-box;
+	border: none;
+	resize: none;
+	background: none;
+}
+
+.memo-contents__fieldset-textarea:focus {
+	outline: none;
+}
+
+.memo-contents__fieldset-input {
+	position: absolute;
+	box-sizing: border-box;
+	z-index: 10;
+	top: 0;
+	left: 0px;
+	right: 30px;
+	width: 100%;
+	padding: 30px 30px 20px;
+	border: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.memo-contents__fieldset-input:focus {
+	outline: none;
+}
+
+.memo-contents__fieldset-btns {
+	position: absolute;
+	bottom: 10px;
+	right: 30px;
+}
+
+.memo-contents__fieldset-btns .button-g {
+	width: 70px;
+	height: 40px;
+	padding: 0;
+}
+
+.memo-contents__save-button:hover, .memo-contents__save-button:focus {
+	color: #465298;
+	border-color: #465298;
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 15px;
+	background: #454545;
+	color: #ccc;
+}
+
+.login {
+	background: #465298;
+	color: #fff;
+}
+
+.login-section .header,
+.signup-section .header {
+	position: static;
+	padding: 0;
+	background: none;
+	text-align: center;
+	height: auto;
+}
+
+.login-section .header .title,
+.signup-section .header .title {
+	float: none;
+}
+
+.login-section .container,
+.signup-section .container {
+	position: relative;
+	top: 0;
+	bottom: 0;
+}
+
+.login-section {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	max-width: 320px;
+	min-width: 320px;
+	margin-top: -330px;
+	margin-left: -160px;
+}
+
+.signup-section {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	max-width: 320px;
+	min-width: 320px;
+	margin-top: -290px;
+	margin-left: -160px;
+}
+
+.signup-section .header {
+	overflow: inherit;
+}
+
+.signup-section .title-header {
+	display: block;
+	padding-bottom: 20px;
+	font-weight: normal;
+	font-size: 34px;
+}
+
+.signup-section .fa-id-card-alt {
+	display: block;
+	font-size: 150px;
+	margin-bottom: 20px;
+}
+
+.signup-section .fa-cog {
+	display: block;
+	font-size: 150px;
+	margin-bottom: 20px;
+}
+
+.form-contents {
+	width: 320px;
+	margin: 0 auto;
+}
+
+.form-contents label {
+	display: block;
+	margin-top: 15px;
+	font-size: 15px;
+}
+
+.form-contents__fieldset-input {
+	display: block;
+	width: 100%;
+	margin-top: 8px;
+	box-sizing: border-box;
+	border: 0;
+	border-radius: 4px;
+	padding: 11px;
+	font-size: 16px;
+}
+
+.form-contents__fieldset-input:focus {
+	outline: none;
+}
+
+.form-contents .button-g {
+	display: block;
+	width: 100%;
+	margin-top: 15px;
+	border: 0;
+	background: #1d2557;
+	color: #fff;
+}
+
+.form-contents .button-g:hover, .form-contents .button-g:focus {
+	transition: .2s all ease;
+	background: #2d387c;
+}
+
+@media screen and (max-width: 640px) {
+	.header {
+		height: 55px;
+	}
+	.header .title {
+		float: none;
+	}
+	.header .header-menu {
+		overflow: hidden;
+		float: none;
+		padding-top: 6px;
+	}
+	.header .header-menu__search {
+		padding-right: 0;
+	}
+	.container {
+		top: 85px;
+	}
+	.container .memo-side {
+		width: 220px;
+	}
+	.container .memo-contents {
+		left: 220px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.header {
+		height: 85px;
+		text-align: center;
+	}
+	.header .header-menu {
+		float: none;
+	}
+	.header .header-menu__btns {
+		float: none;
+	}
+	.header .header-menu__search {
+		float: none;
+	}
+	.container {
+		top: 115px;
+	}
+	.container .memo-side {
+		width: 0;
+	}
+	.container .memo-contents {
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.login-section .item-svg {
+		transform: scale(0.7);
+		margin-bottom: -50px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.login-section .container,
+	.signup-section .container {
+		padding: 0 20px;
+	}
+	.login-section .form-contents,
+	.signup-section .form-contents {
+		width: 100%;
+	}
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,67 @@
+{% extends "template.html" %} {% set title = 'FASTBOOK : Memo' %} {% block header %} {% set headerItem = 'menu' %} {% include "header.html" %} {% endblock %} {% block memo_side %} {% include "memo_side.html" %} {% endblock %} {% block memo_contents %}
+{% include "memo_contents.html" %} {% endblock %} {% block footer %} {% include "footer.html" %} {% endblock %} {% block script %}
+<script>
+    (function() {
+        let isResizing = false;
+        const elContainer = document.getElementById("container"),
+            elLeft = document.querySelector(".memo-side"),
+            elRight = document.querySelector(".memo-contents"),
+            elbody = document.querySelector("body"),
+            elHandle = document.getElementById("drag"),
+            elText = document.querySelector('.memo-contents__fieldset-textarea');
+
+        elHandle.onmousedown = function(e) {
+            isResizing = true;
+            elbody.classList.add('no-drag');
+        };
+
+        document.onmousemove = function(e) {
+            if (!isResizing) {
+                return;
+            }
+            const offsetRight = elContainer.clientWidth - (e.clientX - elContainer.offsetLeft);
+            elLeft.style.width = elContainer.clientWidth - offsetRight + "px";
+            elRight.style.left = elContainer.clientWidth - offsetRight + "px";
+
+
+    elHandle.onmousedown = function(e) {
+        isResizing = true;
+        elbody.classList.add('no-drag');
+    };
+    
+    document.onmousemove = function(e) {
+        if (!isResizing) {
+            return;
+        }
+        const offsetRight = elContainer.clientWidth - (e.clientX - elContainer.offsetLeft);
+        elLeft.style.width = elContainer.clientWidth - offsetRight + "px";
+        elRight.style.left = elContainer.clientWidth - offsetRight + "px"; 
+        
+    }
+    elHandle.onmouseup = function(e) {
+        if(e.clientX < 220){
+            elLeft.style.width = "220px"; 
+            elRight.style.left = "220px"; 
+        }else if(e.clientX > 320){
+            elLeft.style.width = "320px"; 
+            elRight.style.left = "320px"; 
+
+        }
+        elHandle.onmouseup = function(e) {
+            if (e.clientX < 240) {
+                elLeft.style.width = "240px";
+                elRight.style.left = "240px";
+            } else if (e.clientX > 460) {
+                elLeft.style.width = "460px";
+                elRight.style.left = "460px";
+            }
+            if (e.clientX < 80) {
+                elLeft.style.width = "0px";
+                elRight.style.left = "0px";
+            }
+            elbody.classList.remove('no-drag');
+            isResizing = false;
+        }
+    })();
+</script>
+{% endblock %}
