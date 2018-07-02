@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class PostItem extends React.Component {
   render() {
-    const { id, deletePosts, body } = this.props;
+    const { id, deletePosts, body, submitTime } = this.props;
     return (
       <div>
         <li key={id}>
@@ -14,6 +14,7 @@ export default class PostItem extends React.Component {
           >
             삭제
         </button>
+          {submitTime}
         </li>
       </div>
 

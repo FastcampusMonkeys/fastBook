@@ -9,7 +9,7 @@ export default class PostList extends React.Component {
       <ul>
         {posts.map(post => (
           <PostItem key={post.id} {...post} deletePosts={deletePosts} />
-        ))}
+        )).reverse()}
       </ul>
     );
   }
