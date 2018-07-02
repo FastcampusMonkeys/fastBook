@@ -4,19 +4,19 @@ export default class PostItem extends React.Component {
   render() {
     const { id, deletePosts, body, submitTime } = this.props;
     return (
-      <li key={id}>
-        <p>
-          <b>{body}</b>
+      <div>
+        <li key={id}>
+          <p>{body}</p>
           <button
             onClick={e => {
               deletePosts(id);
             }}
           >
-            delete
-          </button>
-        </p>
-        {submitTime}
-      </li>
+            삭제
+        </button>
+        </li>
+      </div>
+
     );
   }
 }
