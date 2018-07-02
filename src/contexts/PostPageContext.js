@@ -20,23 +20,26 @@ export default class PostPageProvider extends React.Component {
   };
 
   createPosts = async newPostBody => {
-    if (newPostBody) {
-      let localeDate = new Date().toLocaleDateString();
-      let localeTime = new Date().toLocaleTimeString();
-      const newpost = {
-        body: newPostBody,
-        submitTime: localeDate + '  ' + localeTime,
-      };
-      this.setState({ loading: true });
-      await postAPI.post('/posts', newpost);
-      await this.fetchPosts();
-    }
+    let localeDate = new Date().toLocaleDateString();
+    let localeTime = new Date().toLocaleTimeString();
+    const newpost = {
+      body: newPostBody,
+      submitTime: localeDate + '  ' + localeTime,
+    };
+    this.setState({ loading: true });
+    await postAPI.post('/posts', newpost);
+    await this.fetchPosts();
   };
   deletePosts = async id => {
     // 할일 삭제 할때 사용
     this.setState({ loading: true });
     await postAPI.delete(`/posts/${id}`);
     await this.fetchPosts();
+  };
+  updatePosts = async (id, body) => {
+    await postAPI.patch(`/posts/${id}`, {
+      body: body,
+    });
   };
   render() {
     const value = {
@@ -45,6 +48,7 @@ export default class PostPageProvider extends React.Component {
       fetchPosts: this.fetchPosts,
       createPosts: this.createPosts,
       deletePosts: this.deletePosts,
+      updatePosts: this.updatePosts,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }
