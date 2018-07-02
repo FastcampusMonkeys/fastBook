@@ -17,8 +17,8 @@ export default class SignupForm extends React.Component {
   };
 
   render() {
-    const elBody = document.querySelector('body')
-    elBody.classList.add('login')
+    const elBody = document.querySelector('body');
+    elBody.classList.add('login');
     const {
       username,
       password,
@@ -33,11 +33,11 @@ export default class SignupForm extends React.Component {
             <h1>
               <span>FASTBOOK</span>
             </h1>
-            <strong>
-              SAVE YOUR NOTES QUICKLY
-            </strong>
+            <strong>SAVE YOUR NOTES QUICKLY</strong>
           </div>
-          <strong className="title-header"><i className="fas fa-id-card-alt"></i>Sign up</strong>
+          <strong className="title-header">
+            <i className="fas fa-id-card-alt" />Sign up
+          </strong>
         </header>
         <section id="container" className="container" role="main">
           <div className="form-contents">
