@@ -7,15 +7,19 @@ export default class PostPageContainer extends React.Component {
   render() {
     return (
       <PostPageConsumer>
-        {({ posts, loading, createPosts, deletePosts }) => (
-          <div>
+        {({ posts, loading, createPosts, deletePosts, privatePosts }) => (
+          <React.Fragment>
             <PostForm onCreate={createPosts} />
             {loading ? (
               <div>Loading..</div>
             ) : (
-              <PostList posts={posts} deletePosts={deletePosts} />
-            )}
-          </div>
+                <PostList
+                  posts={posts}
+                  deletePosts={deletePosts}
+                  privatePosts={privatePosts}
+                />
+              )}
+          </React.Fragment>
         )}
       </PostPageConsumer>
     );

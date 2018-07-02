@@ -1,24 +1,24 @@
 import React from 'react';
 // import { Redirect } from 'react-router-dom';
-import LoginBtn from '../containers/LoginBtnContainer';
+import SignupCancelBtn from '../containers/SignupCancelBtnContainer';
 
 export default class SignupForm extends React.Component {
-  static defaultProps = {
-    username: '', // 아이디 입력 필드에 표시될 값
-    password: '', // 암호 입력 필드에 표시될 값
-    onUsernameChange: username => { }, // 아이디 입력 필드에 입력이 일어날 때 호출되는 함수
-    onPasswordChange: password => { }, // 암호 입력 필드에 입력이 일어날 때 호출되는 함수
-    onSubmit: () => { }, // 폼 전송이 일어날 때 호출되는 함수
-  };
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit();
   };
 
+  componentDidMount() {
+    const elBody = document.body;
+    elBody.classList.add('login')
+  }
+
+  componentWillUnmount() {
+    const elBody = document.body;
+    elBody.classList.remove('login')
+  }
   render() {
-    const elBody = document.querySelector('body');
-    elBody.classList.add('login');
     const {
       username,
       password,
@@ -33,11 +33,11 @@ export default class SignupForm extends React.Component {
             <h1>
               <span>FASTBOOK</span>
             </h1>
-            <strong>SAVE YOUR NOTES QUICKLY</strong>
+            <strong>
+              SAVE YOUR NOTES QUICKLY
+            </strong>
           </div>
-          <strong className="title-header">
-            <i className="fas fa-id-card-alt" />Sign up
-          </strong>
+          <strong className="title-header"><i className="fas fa-id-card-alt"></i>Sign up</strong>
         </header>
         <section id="container" className="container" role="main">
           <div className="form-contents">
@@ -58,10 +58,12 @@ export default class SignupForm extends React.Component {
                   value={password}
                   onChange={e => onPasswordChange(e.target.value)}
                 />
-                <label htmlFor="singupRePwInput">CONFIRM PASSWORD</label>
-                <input type="password" id="singupRePwInput" className="form-contents__fieldset-input" />
+                {/* <label htmlFor="singupRePwInput">CONFIRM PASSWORD</label>
+                <input type="password" id="singupRePwInput" className="form-contents__fieldset-input"
+
+                /> */}
                 <button className="button-g button-signup">Sign up for FASTBOOK</button>
-                <LoginBtn />
+                <SignupCancelBtn />
               </fieldset>
             </form>
           </div>

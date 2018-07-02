@@ -14,10 +14,17 @@ export default class LoginForm extends React.Component {
     e.preventDefault();
     this.props.onSubmit();
   };
+  componentDidMount() {
+    const elBody = document.body;
+    elBody.classList.add('login')
+  }
+
+  componentWillUnmount() {
+    const elBody = document.body;
+    elBody.classList.remove('login')
+  }
 
   render() {
-    const elBody = document.querySelector('body')
-    elBody.classList.add('login')
     const {
       username,
       password,

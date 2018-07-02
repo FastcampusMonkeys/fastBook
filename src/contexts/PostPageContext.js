@@ -5,7 +5,7 @@ import postAPI from '../postAPI';
 const { Provider, Consumer } = React.createContext();
 
 export default class PostPageProvider extends React.Component {
-  state = { posts: [], loading: false };
+  state = { posts: [], loading: false, private: false };
   async componentDidMount() {
     await this.fetchPosts();
   }
@@ -16,6 +16,7 @@ export default class PostPageProvider extends React.Component {
     this.setState({
       posts: res.data,
       loading: false,
+      private: false,
     });
   };
 
@@ -38,6 +39,19 @@ export default class PostPageProvider extends React.Component {
     await postAPI.delete(`/posts/${id}`);
     await this.fetchPosts();
   };
+
+  privatePosts = async id => {
+    // 글 잠금
+    const newPostKey = {
+      private: true
+    }
+    this.setState({
+      loading: true
+    });
+    await postAPI.patch(`/posts/${id}`, newPostKey);
+    await this.fetchPosts();
+  };
+
   render() {
     const value = {
       posts: this.state.posts,
@@ -45,6 +59,7 @@ export default class PostPageProvider extends React.Component {
       fetchPosts: this.fetchPosts,
       createPosts: this.createPosts,
       deletePosts: this.deletePosts,
+      privatePosts: this.privatePosts
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }

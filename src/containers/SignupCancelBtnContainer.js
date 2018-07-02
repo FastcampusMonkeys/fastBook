@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { AuthConsumer } from '../contexts/AuthContext';
 
-export default class LoginBtnContainer extends Component {
+export default class SignupCancelBtnContainer extends Component {
   state = {
     success: false,
   };
