@@ -34,7 +34,7 @@ export default class LoginForm extends React.Component {
             </h1>
             <strong>
               SAVE YOUR NOTES QUICKLY
-</strong>
+            </strong>
           </div>
           <div className="item-svg">
             <svg>
@@ -75,38 +75,26 @@ export default class LoginForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <fieldset className="form-contents__fieldset">
                 <legend className="blind">로그인 입력폼</legend>
-                <div className="field">
-                  <label htmlFor="idInput" >사용자 이름</label>
-                  <div className="control">
-                    <input
-                      className="form-contents__fieldset-input"
-                      type="text"
-                      id="idInput"
-                      value={username}
-                      onChange={e => onUsernameChange(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="field">
-                  <label htmlFor="pwInput" className="label">비밀번호</label>
-                  <div className="control">
-                    <input
-                      className="form-contents__fieldset-input"
-                      type="password"
-                      id="pwInput"
-                      value={password}
-                      onChange={e => onPasswordChange(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="field is-grouped">
-                  <div className="control">
-                    <button className="button-g from-contents__login-button">전송</button>
-                  </div>
-                </div>
+                <label htmlFor="idInput">ID</label>
+                <input
+                  className="form-contents__fieldset-input"
+                  type="text"
+                  id="idInput"
+                  value={username}
+                  onChange={e => onUsernameChange(e.target.value)}
+                />
+                <label htmlFor="pwInput" className="label">PASSWORD</label>
+                <input
+                  className="form-contents__fieldset-input"
+                  type="password"
+                  id="pwInput"
+                  value={password}
+                  onChange={e => onPasswordChange(e.target.value)}
+                />
+                <button className="button-g from-contents__login-button">Login</button>
+                <SignupBtn />
               </fieldset>
             </form>
-            <SignupBtn />
           </div>
         </section>
 

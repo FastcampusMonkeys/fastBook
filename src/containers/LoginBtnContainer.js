@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { AuthConsumer } from '../contexts/AuthContext';
 
-export default class SignupBtnContainer extends Component {
+export default class LoginBtnContainer extends Component {
   state = {
     success: false,
   };
   render() {
     if (this.state.success) {
-      return <Redirect to="signup" />;
+      return <Redirect to="login" />;
     } else {
       return (
         <AuthConsumer>
@@ -18,7 +18,7 @@ export default class SignupBtnContainer extends Component {
                 this.setState({ success: true });
               }}
             >
-              Sign up
+              cancel
             </button>
           )}
         </AuthConsumer>

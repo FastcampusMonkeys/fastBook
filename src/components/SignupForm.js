@@ -1,4 +1,6 @@
 import React from 'react';
+// import { Redirect } from 'react-router-dom';
+import LoginBtn from '../containers/LoginBtnContainer';
 
 export default class SignupForm extends React.Component {
   static defaultProps = {
@@ -42,31 +44,24 @@ export default class SignupForm extends React.Component {
             <form className="from-contents__form" onSubmit={this.handleSubmit}>
               <fieldset className="form-contents__fieldset">
                 <legend className="blind">회원가입 입력폼</legend>
-                <label htmlFor="singupIdInput" className="label">사용자 이름</label>
-                <div className="control">
-                  <input
-                    id="singupIdInput" className="form-contents__fieldset-input"
-                    type="text"
-                    value={username}
-                    onChange={e => onUsernameChange(e.target.value)}
-                  />
-                </div>
-                <div className="field">
-                  <label htmlFor="singupPwInput" className="label">비밀번호</label>
-                  <div className="control">
-                    <input
-                      id="singupPwInput" className="form-contents__fieldset-input"
-                      type="password"
-                      value={password}
-                      onChange={e => onPasswordChange(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="field is-grouped">
-                  <div className="control">
-                    <button className="button-g">회원가입</button>
-                  </div>
-                </div>
+                <label htmlFor="singupIdInput" className="label">ID</label>
+                <input
+                  id="singupIdInput" className="form-contents__fieldset-input"
+                  type="text"
+                  value={username}
+                  onChange={e => onUsernameChange(e.target.value)}
+                />
+                <label htmlFor="singupPwInput" className="label">PASSWORD</label>
+                <input
+                  id="singupPwInput" className="form-contents__fieldset-input"
+                  type="password"
+                  value={password}
+                  onChange={e => onPasswordChange(e.target.value)}
+                />
+                <label htmlFor="singupRePwInput">CONFIRM PASSWORD</label>
+                <input type="password" id="singupRePwInput" className="form-contents__fieldset-input" />
+                <button className="button-g button-signup">Sign up for FASTBOOK</button>
+                <LoginBtn />
               </fieldset>
             </form>
           </div>
