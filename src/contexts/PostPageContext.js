@@ -16,7 +16,6 @@ export default class PostPageProvider extends React.Component {
     this.setState({
       posts: res.data,
       loading: false,
-      private: false,
     });
   };
 
@@ -43,7 +42,7 @@ export default class PostPageProvider extends React.Component {
   privatePosts = async id => {
     // 글 잠금
     const newPostKey = {
-      private: true
+      privateMode: true
     }
     this.setState({
       loading: true
