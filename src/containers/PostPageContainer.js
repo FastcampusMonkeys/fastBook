@@ -20,20 +20,20 @@ export default class PostPageContainer extends React.Component {
       <PostPageConsumer>
         {({ posts, loading, createPosts, deletePosts, updatePosts }) => (
           <div>
-            <SearchForm onSubmit={this.updateSearchStr} />
+            <PostForm onCreate={createPosts} />
             {loading ? (
               <div>Loading..</div>
-            ) : this.checkList ? (
-              <PostList posts={posts} deletePosts={deletePosts} />
             ) : (
-              <PostList
-                posts={posts.filter(item =>
-                  item.body.includes(this.state.searchStr)
-                )}
-                deletePosts={deletePosts}
-              />
+              <div>
+                <PostList
+                  posts={posts.filter(p =>
+                    p.body.includes(this.state.searchStr)
+                  )}
+                  deletePosts={deletePosts}
+                />
+                <SearchForm onSubmit={this.updateSearchStr} />
+              </div>
             )}
-            <PostForm onCreate={createPosts} onUpdate={updatePosts} />
           </div>
         )}
       </PostPageConsumer>

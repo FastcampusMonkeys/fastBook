@@ -19,7 +19,7 @@ export default class PostForm extends React.Component {
 
   handleButtonClick = e => {
     // 함수 내려받기
-    this.props.onCreate();
+    this.props.onCreate(this.state.newPostBody);
     this.setState({
       newPostBody: this.state.newPostBody,
     });

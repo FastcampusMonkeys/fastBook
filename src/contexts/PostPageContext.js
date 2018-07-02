@@ -29,11 +29,12 @@ export default class PostPageProvider extends React.Component {
   // };
 
   createPosts = async newPostBody => {
-    let localeDate = new Date().toLocaleDateString();
-    let localeTime = new Date().toLocaleTimeString();
+    let localDate = new Date().toLocaleDateString();
+    let localTime = new Date().toLocaleTimeString();
+
     const newpost = {
       body: newPostBody,
-      submitTime: localeDate + '  ' + localeTime,
+      submitTime: localDate + ' ' + localTime,
     };
     this.setState({ loading: true });
     await postAPI.post('/posts', newpost);
@@ -45,11 +46,6 @@ export default class PostPageProvider extends React.Component {
     await postAPI.delete(`/posts/${id}`);
     await this.fetchPosts();
   };
-  updatePosts = async (id, body) => {
-    await postAPI.patch(`/posts/${id}`, {
-      body: body,
-    });
-  };
   render() {
     const value = {
       posts: this.state.posts,
@@ -57,7 +53,6 @@ export default class PostPageProvider extends React.Component {
       fetchPosts: this.fetchPosts,
       createPosts: this.createPosts,
       deletePosts: this.deletePosts,
-      updatePosts: this.updatePosts,
       searchPosts: this.searchPosts,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
