@@ -34,7 +34,7 @@ export default class PostForm extends React.Component {
             onChange={this.handleInputChange}
             className="detailContent"
             value={this.state.newPostBody}
-            style={{ height: 500 + 'px', width: 500 + 'px' }}
+            placeholder="Add Content"
           />
           <button onClick={this.handleButtonClick}>추가</button>
         </label>

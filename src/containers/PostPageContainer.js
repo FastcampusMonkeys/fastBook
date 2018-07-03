@@ -20,7 +20,7 @@ export default class PostPageContainer extends React.Component {
       <PostPageConsumer>
         {({ posts, loading, createPosts, deletePosts, updatePosts }) => (
           <div>
-            <PostForm onCreate={createPosts} />
+            <SearchForm onSubmit={this.updateSearchStr} />
             {loading ? (
               <div>Loading..</div>
             ) : (
@@ -31,9 +31,9 @@ export default class PostPageContainer extends React.Component {
                   )}
                   deletePosts={deletePosts}
                 />
-                <SearchForm onSubmit={this.updateSearchStr} />
               </div>
             )}
+            <PostForm onCreate={createPosts} posts={posts} />
           </div>
         )}
       </PostPageConsumer>
