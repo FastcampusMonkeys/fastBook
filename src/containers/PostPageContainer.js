@@ -32,9 +32,9 @@ export default class PostPageContainer extends React.Component {
                   deletePosts={deletePosts}
                 />
 
-                <PostForm onCreate={createPosts} />
               </div>
             )}
+            <PostForm onCreate={createPosts} posts={posts} />
           </div>
         )}
       </PostPageConsumer>
