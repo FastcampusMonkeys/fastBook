@@ -31,6 +31,7 @@ export default class PostPageContainer extends React.Component {
                   )}
                   deletePosts={deletePosts}
                 />
+
               </div>
             )}
             <PostForm onCreate={createPosts} posts={posts} />

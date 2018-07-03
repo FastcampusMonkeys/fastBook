@@ -21,11 +21,12 @@ export default class PostForm extends React.Component {
     // 함수 내려받기
     this.props.onCreate(this.state.newPostBody);
     this.setState({
-      newPostBody: this.state.newPostBody,
+      newPostBody: '',
     });
   };
 
   render() {
+    const { newPostBody } = this.state;
     return (
       <div>
         <label>
@@ -33,8 +34,10 @@ export default class PostForm extends React.Component {
             type="text"
             onChange={this.handleInputChange}
             className="detailContent"
+
             value={this.state.newPostBody}
             placeholder="Add Content"
+
           />
           <button onClick={this.handleButtonClick}>추가</button>
         </label>
