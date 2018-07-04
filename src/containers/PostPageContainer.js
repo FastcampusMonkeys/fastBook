@@ -18,7 +18,14 @@ export default class PostPageContainer extends React.Component {
   render() {
     return (
       <PostPageConsumer>
-        {({ posts, loading, createPosts, deletePosts, updatePosts }) => (
+        {({
+          posts,
+          loading,
+          createPosts,
+          deletePosts,
+          updatePosts,
+          privatePosts,
+        }) => (
           <div>
             <SearchForm onSubmit={this.updateSearchStr} />
             {loading ? (
@@ -31,6 +38,7 @@ export default class PostPageContainer extends React.Component {
                   )}
                   deletePosts={deletePosts}
                   updatePosts={updatePosts}
+                  privatePosts={privatePosts}
                   {...posts}
                 />
               </div>

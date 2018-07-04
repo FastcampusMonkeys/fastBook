@@ -15,24 +15,22 @@ export default class PostList extends React.Component {
     this.setState({
       textAreaValue: e.target.value,
     });
-    // const { id, textAreaValue } = this.state;
-    // const { updatePosts } = this.props;
-    // const realDream = updatePosts(id, textAreaValue);
-    const myDream = debounce(this.realDream, 2000);
-    myDream();
+
+    const autoSavePost = debounce(this.onUpdate, 2000);
+    autoSavePost();
   };
 
-  realDream = () => {
+  onUpdate = () => {
     this.props.updatePosts(this.state.id, this.state.textAreaValue);
   };
-  test = (id, body) => {
+  idComunity = (id, body) => {
     this.setState({
       textAreaValue: body,
       id: id,
     });
   };
   render() {
-    const { posts, deletePosts } = this.props;
+    const { posts, deletePosts, privatePosts } = this.props;
     return (
       <div>
         <ul>
@@ -44,7 +42,8 @@ export default class PostList extends React.Component {
                 deletePosts={deletePosts}
                 detailValue={this.detailValue}
                 updatePosts={this.updatePosts}
-                test={this.test}
+                privatePosts={privatePosts}
+                idComunity={this.idComunity}
               />
             ))
             .reverse()}
@@ -60,6 +59,20 @@ export default class PostList extends React.Component {
             onChange={this.handleChangeView}
           />
         </div>
+        <button
+          onClick={e => {
+            deletePosts(this.state.id);
+          }}
+        >
+          삭제
+        </button>
+        <button
+          onClick={e => {
+            privatePosts(this.state.id);
+          }}
+        >
+          잠금
+        </button>
       </div>
     );
   }

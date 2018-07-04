@@ -13,6 +13,7 @@ export default class SignUPFormContainer extends React.Component {
 
   updateUsername = username => this.setState({ username });
   updatePassword = password => this.setState({ password });
+
   render() {
     const { success, username, password } = this.state;
     if (success) return <Redirect to="/login" />;

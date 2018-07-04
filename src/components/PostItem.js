@@ -5,22 +5,15 @@ export default class PostItem extends React.Component {
     this.props.detailValue(this.props.body);
   };
   handleChangeView = e => {
-    this.props.test(this.props.id, this.props.body);
+    this.props.idComunity(this.props.id, this.props.body);
   };
   render() {
-    const { id, deletePosts, body, submitTime } = this.props;
+    const { id, privateMode, body, submitTime, privatePosts } = this.props;
     return (
       <div onClick={this.detailContent}>
         <li key={id}>
           <p onClick={this.handleChangeView}>
-            {body}
-            <button
-              onClick={e => {
-                deletePosts(id);
-              }}
-            >
-              삭제
-            </button>
+            {privateMode ? <strong>잠겨있음</strong> : <strong>{body}</strong>}
           </p>
           {submitTime}
         </li>
