@@ -5,7 +5,7 @@ import debounce from 'lodash.debounce';
 export default class PostList extends React.Component {
   state = {
     textAreaValue: '',
-    id: '',
+    id: ''
   };
 
   detailValue = answerValue => {
@@ -25,16 +25,16 @@ export default class PostList extends React.Component {
   realDream = () => {
     this.props.updatePosts(this.state.id, this.state.textAreaValue);
   };
-  test = (id, body) => {
+  test = (id, body, ) => {
     this.setState({
       textAreaValue: body,
       id: id,
     });
   };
   render() {
-    const { posts, deletePosts, privatePosts } = this.props;
+    const { posts, privateMode, deletePosts, privatePosts } = this.props;
     return (
-      <div>
+      <React.Fragment>
         <ul>
           {posts
             .map(post => (
@@ -51,17 +51,25 @@ export default class PostList extends React.Component {
             .reverse()}
         </ul>
         <div>
-          <textarea
-            key={posts.id}
-            name="detailContent"
-            cols="30"
-            rows="10"
-            placeholder="여기에 내용이 뜹니다."
-            value={this.state.textAreaValue}
-            onChange={this.handleChangeView}
-          />
+          {
+            <textarea
+              // test={this.test}
+              // key={posts.id}
+              name="detailContent"
+              cols="30"
+              rows="10"
+              placeholder="여기에 내용이 뜹니다."
+              value={(privatePosts) ? (
+                '잠겨있음!!'
+              ) : (
+                  this.state.textAreaValue
+                )}
+
+              onChange={this.handleChangeView}
+            />
+          }
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
