@@ -1,5 +1,4 @@
 import React from 'react';
-import debounce from 'lodash.debounce';
 
 // export default 는 값을 export하는거고 export 는 여러가지가 가능하다
 export default class PostForm extends React.Component {
@@ -14,7 +13,6 @@ export default class PostForm extends React.Component {
     this.setState({
       newPostBody: e.target.value,
     });
-    // debounce(this.props.onUpdate(), 2000);
   };
 
   handleButtonClick = e => {
@@ -26,7 +24,6 @@ export default class PostForm extends React.Component {
   };
 
   render() {
-    const { newPostBody } = this.state;
     return (
       <div>
         <label>
@@ -34,10 +31,8 @@ export default class PostForm extends React.Component {
             type="text"
             onChange={this.handleInputChange}
             className="detailContent"
-
             value={this.state.newPostBody}
             placeholder="Add Content"
-
           />
           <button onClick={this.handleButtonClick}>추가</button>
         </label>

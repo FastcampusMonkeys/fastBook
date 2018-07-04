@@ -11,19 +11,6 @@ export default class SearchForm extends React.Component {
     });
   };
 
-  // handleButtonClick = e => {
-  //   // keyword값과 postitem에 body 값이 같은지를 비교해야한다..
-  //   //  하지만 postitem의 body 값 불러와지질 않음 불러오는 방법이 잘못된거같다.
-  //   if (this.state.keyword === this.props.body) {
-  //     console.log('a')
-  //   } else {
-  //     console.log(this.props.body)
-  //     this.setState({
-  //       keyword: '',
-  //     });
-  //   }
-  // };
-
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state.keyword);
