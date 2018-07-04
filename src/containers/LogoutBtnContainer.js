@@ -19,7 +19,7 @@ export default class LogoutBtnContainer extends Component {
                 this.setState({ success: true });
               }}
             >
-              로그아웃
+              Log Out
             </button>
           )}
         </AuthConsumer>
