@@ -6,28 +6,36 @@ import SearchForm from '../components/SearchForm';
 
 export default class PostPageContainer extends React.Component {
   state = {
-    searchStr: ''
-  }
+    searchStr: '',
+  };
 
   updateSearchStr = searchStr => {
     this.setState({
-      searchStr
-    })
-  }
+      searchStr,
+    });
+  };
 
   render() {
     return (
       <PostPageConsumer>
-        {({ posts, loading, createPosts, deletePosts }) => (
+        {({ posts, loading, createPosts, deletePosts, updatePosts }) => (
           <div>
-            <PostForm onCreate={createPosts} />
+            <SearchForm onSubmit={this.updateSearchStr} />
             {loading ? (
               <div>Loading..</div>
-            ) : (<div>
-              <PostList posts={posts.filter(p => p.body.includes(this.state.searchStr))} deletePosts={deletePosts} />
-              <SearchForm onSubmit={this.updateSearchStr} />
-            </div>
-              )}
+            ) : (
+              <div>
+                <PostList
+                  posts={posts.filter(p =>
+                    p.body.includes(this.state.searchStr)
+                  )}
+                  deletePosts={deletePosts}
+                  updatePosts={updatePosts}
+                  {...posts}
+                />
+              </div>
+            )}
+            <PostForm onCreate={createPosts} />
           </div>
         )}
       </PostPageConsumer>
