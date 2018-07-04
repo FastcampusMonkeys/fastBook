@@ -30,11 +30,12 @@ export default class PostPageContainer extends React.Component {
                     p.body.includes(this.state.searchStr)
                   )}
                   deletePosts={deletePosts}
+                  updatePosts={updatePosts}
+                  {...posts}
                 />
-
               </div>
             )}
-            <PostForm onCreate={createPosts} posts={posts} />
+            <PostForm onCreate={createPosts} />
           </div>
         )}
       </PostPageConsumer>
