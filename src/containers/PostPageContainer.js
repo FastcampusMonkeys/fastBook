@@ -25,6 +25,7 @@ export default class PostPageContainer extends React.Component {
           deletePosts,
           updatePosts,
           privatePosts,
+          unPrivatePosts,
         }) => (
             <div>
               <SearchForm onSubmit={this.updateSearchStr} />
@@ -39,12 +40,12 @@ export default class PostPageContainer extends React.Component {
                       deletePosts={deletePosts}
                       updatePosts={updatePosts}
                       privatePosts={privatePosts}
+                      unPrivatePosts={unPrivatePosts}
                       {...posts}
                     />
                   </div>
                 )}
               <PostForm onCreate={createPosts} />
-              <HeaderForm />
             </div>
           )}
       </PostPageConsumer>
