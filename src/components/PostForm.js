@@ -22,16 +22,17 @@ export default class PostForm extends React.Component {
       newPostBody: '',
     });
   };
+
   render() {
-    const { newPostBody } = this.state;
     return (
       <div>
         <label>
-          새 메모
-          <input
+          <textarea
             type="text"
-            value={newPostBody}
             onChange={this.handleInputChange}
+            className="detailContent"
+            value={this.state.newPostBody}
+            placeholder="Add Content"
           />
           <button onClick={this.handleButtonClick}>추가</button>
         </label>

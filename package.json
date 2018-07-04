@@ -5,6 +5,7 @@
     "dependencies": {
         "@types/react": "^16.4.2",
         "axios": "^0.18.0",
+        "lodash.debounce": "^4.0.8",
         "react": "^16.4.1",
         "react-dom": "^16.4.1",
         "react-router-dom": "^4.3.1",
