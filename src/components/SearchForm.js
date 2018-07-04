@@ -21,14 +21,14 @@ export default class SearchForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          검색
+          KeyWord
           <input
             type="text"
             value={keyword}
             placeholder="Search"
             onChange={this.handleInputChange}
           />
-          <button>검색하기</button>
+          <button>Search</button>
         </label>
       </form>
     );

@@ -6,36 +6,18 @@ export default class PostForm extends React.Component {
     onCreate: () => {}, // 할일 추가 버튼 클릭시 호출되는 함수
   };
   state = {
-    newPostBody: '',
-  };
-
-  handleInputChange = e => {
-    this.setState({
-      newPostBody: e.target.value,
-    });
+    newPostBody: 'write content',
   };
 
   handleButtonClick = e => {
     // 함수 내려받기
     this.props.onCreate(this.state.newPostBody);
-    this.setState({
-      newPostBody: '',
-    });
   };
 
   render() {
     return (
       <div>
-        <label>
-          <textarea
-            type="text"
-            onChange={this.handleInputChange}
-            className="detailContent"
-            value={this.state.newPostBody}
-            placeholder="Add Content"
-          />
-          <button onClick={this.handleButtonClick}>추가</button>
-        </label>
+        <button onClick={this.handleButtonClick}>Add</button>
       </div>
     );
   }

@@ -57,7 +57,7 @@ export default class PostPageProvider extends React.Component {
     let localDate = new Date().toLocaleDateString();
     let localTime = new Date().toLocaleTimeString();
     const updatePost = {
-      body: body,
+      body,
       submitTime: localDate + ' ' + localTime,
     };
     await postAPI.patch(`/posts/${id}`, updatePost);
