@@ -12,10 +12,10 @@ export default class PostItem extends React.Component {
     return (
       <div onClick={this.detailContent}>
         <li key={id}>
-          <p onClick={this.handleChangeView}>
+          <p class="memo-side__title" onClick={this.handleChangeView}>
             {privateMode ? <strong>잠겨있음</strong> : <strong>{body}</strong>}
           </p>
-          {submitTime}
+          <span class="memo-side__date">{submitTime}</span>
         </li>
       </div>
     );
