@@ -16,30 +16,27 @@ export default class PostItem extends React.Component {
             {
               privateMode ?
                 (
-                  <p>
-                    <strong>잠겨있음</strong>
-                  </p>
+                  <strong>잠겨있음</strong>
                 ) : (
-                  <p>
-                    <strong>{body}</strong>
-                  </p>
+                  <strong>{body}</strong>
                 )
             }
-            <button
-              onClick={e => {
-                deletePosts(id);
-              }}
-            >
-              삭제
-            </button>
-            <button
-              onClick={e => {
-                privatePosts(id);
-              }}
-            >
-              잠금
-            </button>
           </p>
+          <button
+            onClick={e => {
+              deletePosts(id);
+            }}
+          >
+            삭제
+            </button>
+          <button
+            onClick={e => {
+              privatePosts(id);
+            }}
+          >
+            잠금
+            </button>
+
           {submitTime}
         </li>
       </div>

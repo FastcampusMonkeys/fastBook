@@ -51,6 +51,7 @@ export default class PostPageProvider extends React.Component {
       loading: true
     });
     await postAPI.patch(`/posts/${id}`, newPostKey);
+    await this.fetchPosts();
   };
   updatePosts = async (id, body) => {
     let localDate = new Date().toLocaleDateString();
