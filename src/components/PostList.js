@@ -32,7 +32,7 @@ export default class PostList extends React.Component {
     });
   };
   render() {
-    const { posts, deletePosts } = this.props;
+    const { posts, deletePosts, privatePosts } = this.props;
     return (
       <div>
         <ul>
@@ -44,6 +44,7 @@ export default class PostList extends React.Component {
                 deletePosts={deletePosts}
                 detailValue={this.detailValue}
                 updatePosts={this.updatePosts}
+                privatePosts={privatePosts}
                 test={this.test}
               />
             ))
