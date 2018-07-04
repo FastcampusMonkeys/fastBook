@@ -18,24 +18,31 @@ export default class PostPageContainer extends React.Component {
   render() {
     return (
       <PostPageConsumer>
-        {({ posts, loading, createPosts, deletePosts, updatePosts, privatePosts }) => (
+        {({
+          posts,
+          loading,
+          createPosts,
+          deletePosts,
+          updatePosts,
+          privatePosts,
+        }) => (
           <div>
             <SearchForm onSubmit={this.updateSearchStr} />
             {loading ? (
               <div>Loading..</div>
             ) : (
-                <div>
-                  <PostList
-                    posts={posts.filter(p =>
-                      p.body.includes(this.state.searchStr)
-                    )}
-                    deletePosts={deletePosts}
-                    updatePosts={updatePosts}
-                    privatePosts={privatePosts}
-                    {...posts}
-                  />
-                </div>
-              )}
+              <div>
+                <PostList
+                  posts={posts.filter(p =>
+                    p.body.includes(this.state.searchStr)
+                  )}
+                  deletePosts={deletePosts}
+                  updatePosts={updatePosts}
+                  privatePosts={privatePosts}
+                  {...posts}
+                />
+              </div>
+            )}
             <PostForm onCreate={createPosts} />
           </div>
         )}

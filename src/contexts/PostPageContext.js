@@ -10,7 +10,7 @@ export default class PostPageProvider extends React.Component {
     loading: false,
     id: this.props.id,
     body: '',
-    private: false
+    private: false,
   };
   async componentDidMount() {
     await this.fetchPosts();
@@ -45,10 +45,10 @@ export default class PostPageProvider extends React.Component {
   privatePosts = async id => {
     // 글 잠금
     const newPostKey = {
-      privateMode: true
-    }
+      privateMode: true,
+    };
     this.setState({
-      loading: true
+      loading: true,
     });
     await postAPI.patch(`/posts/${id}`, newPostKey);
     await this.fetchPosts();
@@ -57,7 +57,7 @@ export default class PostPageProvider extends React.Component {
     let localDate = new Date().toLocaleDateString();
     let localTime = new Date().toLocaleTimeString();
     const updatePost = {
-      body,
+      body: body,
       submitTime: localDate + ' ' + localTime,
     };
     await postAPI.patch(`/posts/${id}`, updatePost);
@@ -73,7 +73,7 @@ export default class PostPageProvider extends React.Component {
       deletePosts: this.deletePosts,
       searchPosts: this.searchPosts,
       updatePosts: this.updatePosts,
-      privatePosts: this.privatePosts
+      privatePosts: this.privatePosts,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }
