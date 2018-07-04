@@ -11,7 +11,6 @@ export default class PostPageProvider extends React.Component {
   }
 
   fetchPosts = async () => {
-
     this.setState({ loading: true });
     const res = await postAPI.get('/posts');
     this.setState({
@@ -20,19 +19,9 @@ export default class PostPageProvider extends React.Component {
     });
   };
 
-  // searchPosts = async () => {
-  //   this.setState({ loading: true });
-  //   const res = await postAPI.get('/posts');
-  //   this.setState({
-  //     posts: res.data,
-  //     loading: false,
-  //   });
-  // };
-
   createPosts = async newPostBody => {
     let localDate = new Date().toLocaleDateString();
     let localTime = new Date().toLocaleTimeString();
-
     const newpost = { body: newPostBody, submitTime: localDate + ' ' + localTime };
     this.setState({ loading: true });
     await postAPI.post('/posts', newpost);
