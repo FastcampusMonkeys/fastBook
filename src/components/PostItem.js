@@ -8,7 +8,7 @@ export default class PostItem extends React.Component {
     this.props.idComunity(this.props.id, this.props.body);
   };
   render() {
-    const { id, privateMode, body, submitTime, privatePosts } = this.props;
+    const { id, privateMode, body, submitTime } = this.props;
     return (
       <div onClick={this.detailContent}>
         <li key={id}>

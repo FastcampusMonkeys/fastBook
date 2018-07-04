@@ -54,7 +54,6 @@ export default class PostList extends React.Component {
             name="detailContent"
             cols="30"
             rows="10"
-            placeholder="여기에 내용이 뜹니다."
             value={this.state.textAreaValue}
             onChange={this.handleChangeView}
           />
@@ -64,14 +63,14 @@ export default class PostList extends React.Component {
             deletePosts(this.state.id);
           }}
         >
-          삭제
+          Delete
         </button>
         <button
           onClick={e => {
             privatePosts(this.state.id);
           }}
         >
-          잠금
+          Lock
         </button>
       </div>
     );
