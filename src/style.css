@@ -62,10 +62,7 @@ input:-webkit-autofill {
 }
 
 .disabled {
-	background: #eee!important;
-	font-size:30px;
-	line-height: 2
-	
+	background: #eee;
 }
 
 .button-g {
@@ -119,7 +116,7 @@ input:-webkit-autofill {
 	right: 0;
 	bottom: 0;
 	z-index: 9999;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .dimmed_layer strong {
@@ -130,6 +127,16 @@ input:-webkit-autofill {
 	font-size: 30px;
 	line-height: 30px;
 	margin: -15px 0 0 -65px;
+}
+
+.dimmed_layer img {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	color: #fff;
+	font-size: 30px;
+	line-height: 30px;
+	margin: -100px 0 0 -100px;
 }
 
 .header {
@@ -182,7 +189,7 @@ input:-webkit-autofill {
 
 .header-menu__search label {
 	cursor: pointer;
-	margin: 4px 2px 0 0;
+	margin: 4px 4px 0 0;
 	font-size: 22px;
 	color: #fff;
 }
@@ -310,6 +317,26 @@ input:-webkit-autofill {
 	border: none;
 	resize: none;
 	background: none;
+}
+
+.memo-contents__lock{
+	background:none;
+	position: absolute;
+	top:50%;
+	left:50%;
+	width:310px;
+	height:140px;
+	margin:-80px 0 0 -150px;
+	padding:0;
+	text-align: center;
+	font-size:20px;
+	color:#9a9a9a;
+}
+
+.memo-contents__lock .fa-lock{
+	display:block;
+	font-size:100px;
+	margin-bottom:20px;
 }
 
 .memo-contents__fieldset-textarea:focus {

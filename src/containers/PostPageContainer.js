@@ -25,27 +25,36 @@ export default class PostPageContainer extends React.Component {
           updatePosts,
           privatePosts,
           unPrivatePosts,
-        }) =>
-          loading ? (
-            <React.Fragment>
-              <div className="dimmed_layer">
-                <strong>Loading :)</strong>
-              </div>
-              <PostList createPosts={createPosts} posts={posts} {...posts} />
-            </React.Fragment>
-          ) : (
-            <PostList
-              posts={posts.filter(p => p.body.includes(this.state.searchStr))}
-              createPosts={createPosts}
-              deletePosts={deletePosts}
-              updatePosts={updatePosts}
-              privatePosts={privatePosts}
-              unPrivatePosts={unPrivatePosts}
-              {...posts}
-              updateSearchStr={this.updateSearchStr}
-            />
-          )
-        }
+        }) => (
+            loading ? (
+              <React.Fragment>
+                <div className="dimmed_layer">
+                  <strong className="blind">Loading...</strong>
+                  <img src="loader.gif" />
+                </div>
+                <PostList
+                  createPosts={createPosts}
+                  posts={posts}
+                  {...posts}
+                />
+              </React.Fragment>
+            ) : (
+                <React.Fragment>
+                  <PostList
+                    posts={posts.filter(p =>
+                      p.body.includes(this.state.searchStr)
+                    )}
+                    createPosts={createPosts}
+                    deletePosts={deletePosts}
+                    updatePosts={updatePosts}
+                    privatePosts={privatePosts}
+                    unPrivatePosts={unPrivatePosts}
+                    {...posts}
+                    updateSearchStr={this.updateSearchStr}
+                  />
+                </React.Fragment>
+              )
+          )}
       </PostPageConsumer>
     );
   }

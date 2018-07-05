@@ -1,14 +1,18 @@
 import React from 'react';
 
 export default class PostItem extends React.Component {
+
   handleChangeView = e => {
     this.props.idComunity(
       this.props.id,
       this.props.body,
-      this.props.privateMode
+      this.props.privateMode,
     );
   };
 
+  toggle() {
+    this.setState({ select: !this.state.addClass });
+  }
   render() {
     const { id, privateMode, body, submitTime } = this.props;
     return (
