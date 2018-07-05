@@ -1,7 +1,6 @@
 import React from 'react';
 import PostItem from './PostItem';
 import debounce from 'lodash.debounce';
-
 export default class PostList extends React.Component {
   state = {
     textAreaValue: '',
@@ -15,59 +14,84 @@ export default class PostList extends React.Component {
     this.setState({
       textAreaValue: e.target.value,
     });
-    // const { id, textAreaValue } = this.state;
-    // const { updatePosts } = this.props;
-    // const realDream = updatePosts(id, textAreaValue);
-    const myDream = debounce(this.realDream, 2000);
-    myDream();
+
+    const autoSavePost = debounce(this.onUpdate, 2000);
+    autoSavePost();
   };
 
-  realDream = () => {
+  onUpdate = () => {
     this.props.updatePosts(this.state.id, this.state.textAreaValue);
   };
-  test = (id, body, ) => {
+  idComunity = (id, body) => {
     this.setState({
       textAreaValue: body,
       id: id,
     });
   };
+
   render() {
-    const { posts, privateMode, deletePosts, privatePosts } = this.props;
+    const { posts, deletePosts, privatePosts } = this.props;
+    const buttonStyle = {
+      zIndex: '9999',
+      position: 'absolute',
+      top: '130px',
+      left: '300px'
+    }
     return (
       <React.Fragment>
-        <ul>
-          {posts
-            .map(post => (
-              <PostItem
-                key={post.id}
-                {...post}
-                deletePosts={deletePosts}
-                detailValue={this.detailValue}
-                updatePosts={this.updatePosts}
-                privatePosts={privatePosts}
-                test={this.test}
+        <div class="memo-side">
+          <h2 class="blind">메모 리스트</h2>
+          <ul class="memo-side__list">
+            {posts
+              .map(post => (
+                <PostItem
+                  key={post.id}
+                  {...post}
+                  deletePosts={deletePosts}
+                  detailValue={this.detailValue}
+                  updatePosts={this.updatePosts}
+                  privatePosts={privatePosts}
+                  idComunity={this.idComunity}
+                />
+              ))
+              .reverse()}
+          </ul>
+        </div>
+        <div className="memo-contents">
+          <form class="memo-contents__form">
+            <fieldset class="memo-contents__fieldset">
+              <legend class="blind">메모 입력 폼</legend>
+              <label for="contentTextarea" class="blind">내용</label>
+              <textarea
+                className="memo-contents__fieldset-textarea"
+                key={posts.id}
+                id="contentTextarea"
+                name="detailContent"
+                cols="30"
+                rows="10"
+                value={this.state.textAreaValue}
+                onChange={this.handleChangeView}
+                placeholder="Write Here"
               />
-            ))
-            .reverse()}
-        </ul>
-        <div>
-          {
-            <textarea
-              // test={this.test}
-              // key={posts.id}
-              name="detailContent"
-              cols="30"
-              rows="10"
-              placeholder="여기에 내용이 뜹니다."
-              value={(privatePosts) ? (
-                '잠겨있음!!'
-              ) : (
-                  this.state.textAreaValue
-                )}
+            </fieldset>
+          </form>
+          <a id="drag"></a>
 
-              onChange={this.handleChangeView}
-            />
-          }
+          <button
+            style={buttonStyle}
+            onClick={e => {
+              deletePosts(this.state.id);
+            }}
+          >
+            Delete
+        </button>
+          <button
+            onClick={e => {
+              privatePosts(this.state.id);
+            }}
+          >
+            Lock
+        </button>
         </div>
       </React.Fragment>
     );

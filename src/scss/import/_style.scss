@@ -56,6 +56,24 @@ input:-webkit-autofill {
   );
   }
 }
+.dimmed_layer{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 9999;
+  background:rgba(0,0,0,.5);
+  strong{
+    position: absolute;
+    top:50%;
+    left:50%;
+    color:#fff;
+    font-size:30px;
+    line-height: 30px;
+    margin:-15px 0 0 -65px;
+  }
+}
 .header{
   position: fixed;
   top:0;

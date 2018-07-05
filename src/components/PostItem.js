@@ -2,49 +2,27 @@ import React from 'react';
 
 export default class PostItem extends React.Component {
   // detailContent = e => {
-  //   this.props.privateMode ?
-  //   (
-  //     //this.props.detailValue(this.props.body)
-  //     console.log('잠겨있음')
-  //   ) :
-  //   (
-  //     this.props.detailValue(this.props.body)
-  //   )
-  //   this.props.detailValue(this.props.body)
+  //   this.props.detailValue(this.props.body);
   // };
   handleChangeView = e => {
-    this.props.test(this.props.id, this.props.body);
+    this.props.idComunity(this.props.id, this.props.body);
     this.props.detailValue(this.props.body);
   };
+
   render() {
-    const { id, privateMode, deletePosts, body, submitTime, privatePosts } = this.props;
+    const { id, privateMode, body, submitTime } = this.props;
     return (
       <li key={id} onClick={this.handleChangeView}>
-        <p>
+        <a href="#none" class="memo-side__link">
           {
-            privateMode ?
-              (
-                <strong>잠겨있음</strong>
-              ) : (
-                <strong>{body}</strong>
+            privateMode ? (
+              <strong className="memo-side__title">잠겨있음</strong>
+            ) : (
+                <strong className="memo-side__title">{body}</strong>
               )
           }
-        </p>
-        <button
-          onClick={e => {
-            deletePosts(id);
-          }}
-        >
-          삭제
-          </button>
-        <button
-          onClick={e => {
-            privatePosts(id);
-          }}
-        >
-          잠금
-          </button>
-        {submitTime}
+          <span class="memo-side__date">{submitTime}</span>
+        </a>
       </li>
     );
   }
