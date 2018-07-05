@@ -13,13 +13,15 @@ export default class LogoutBtnContainer extends Component {
       return (
         <AuthConsumer>
           {({ logout }) => (
-            <button
+            <button type="button"
               onClick={e => {
                 logout();
                 this.setState({ success: true });
               }}
             >
-              Log Out
+              <i className="fas fa-power-off" title="로그 아웃">
+                <span className="blind">로그아웃</span>
+              </i>
             </button>
           )}
         </AuthConsumer>

@@ -61,6 +61,13 @@ input:-webkit-autofill {
 	-webkit-box-shadow: 0 0 0 1000px white inset;
 }
 
+.disabled {
+	background: #eee!important;
+	font-size:30px;
+	line-height: 2
+	
+}
+
 .button-g {
 	display: inline-block;
 	vertical-align: top;
@@ -103,6 +110,26 @@ input:-webkit-autofill {
 #drag:active {
 	background: #ff8800;
 	background: repeating-linear-gradient(180deg, #fcb86b, #ffab4a 10px, #ec8e23 10px, #ff8800 20px);
+}
+
+.dimmed_layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.dimmed_layer strong {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: #fff;
+	font-size: 30px;
+	line-height: 30px;
+	margin: -15px 0 0 -65px;
 }
 
 .header {

@@ -1,19 +1,19 @@
 import React from 'react';
 import PostList from '../components/PostList';
 import { PostPageConsumer } from '../contexts/PostPageContext';
-import PostForm from '../components/PostForm';
-import SearchForm from '../components/SearchForm';
 
 export default class PostPageContainer extends React.Component {
   state = {
+    id: '',
     searchStr: '',
+    keyword: ''
   };
-
   updateSearchStr = searchStr => {
     this.setState({
       searchStr,
     });
   };
+
 
   render() {
     return (
@@ -27,27 +27,33 @@ export default class PostPageContainer extends React.Component {
           privatePosts,
           unPrivatePosts,
         }) => (
-          <div>
-            <SearchForm onSubmit={this.updateSearchStr} />
-            {loading ? (
-              <div>Loading..</div>
+            loading ? (
+              <React.Fragment>
+                <div className="dimmed_layer">
+                  <strong>Loading :)</strong>
+                </div>
+                <PostList
+                  createPosts={createPosts}
+                  posts={posts}
+                  {...posts}
+                />
+              </React.Fragment>
             ) : (
-              <div>
                 <PostList
                   posts={posts.filter(p =>
                     p.body.includes(this.state.searchStr)
                   )}
+                  createPosts={createPosts}
                   deletePosts={deletePosts}
                   updatePosts={updatePosts}
                   privatePosts={privatePosts}
                   unPrivatePosts={unPrivatePosts}
                   {...posts}
+                  updateSearchStr={this.updateSearchStr}
                 />
-              </div>
-            )}
-            <PostForm onCreate={createPosts} />
-          </div>
-        )}
+              )
+
+          )}
       </PostPageConsumer>
     );
   }
