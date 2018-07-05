@@ -9,7 +9,6 @@ export default class PostList extends React.Component {
     id: '',
     privateMode: '',
     password: '',
-    posts: null,
   };
 
   locking = () => {
@@ -46,12 +45,7 @@ export default class PostList extends React.Component {
       privateMode: privateMode,
     });
   };
-  postsset = () => {
-    const { posts } = this.props;
-    this.setState({
-      posts
-    })
-  }
+
   render() {
     const { posts, deletePosts, privatePosts } = this.props;
     return (
