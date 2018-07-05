@@ -3,8 +3,8 @@ import React from 'react';
 import postAPI from '../postAPI';
 
 const { Provider, Consumer } = React.createContext({
-  login: (username, password) => { }, // 로그인 함수
-  usersingup: (username, password) => { },
+  login: (username, password) => {}, // 로그인 함수
+  usersingup: (username, password) => {},
 });
 
 class AuthProvider extends React.Component {

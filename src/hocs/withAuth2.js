@@ -5,10 +5,10 @@ export default function withAuth(WrappedComponent) {
   return class extends React.Component {
     render() {
       return localStorage.getItem('token') ? (
-        <WrappedComponent {...this.props} />
+        <Redirect to="/posts" />
       ) : (
-          <Redirect to="/login" />
-        );
+        <WrappedComponent {...this.props} />
+      );
     }
   };
 }

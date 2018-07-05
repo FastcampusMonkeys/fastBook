@@ -14,17 +14,18 @@ export default class PostList extends React.Component {
     searchStr: '',
     keyword:'',
     password: '',
+    posts: [],
   };
 
  
   locking = () => {
-    password = prompt('password 입력하시오');
+    password = prompt('당신의 password 입력하시오');
     // this.setState({ password: lockPassWord });
     this.props.privatePosts(this.state.id);
   };
 
   unLocking = e => {
-    const unLockPassWord = prompt('password 입력하시오');
+    const unLockPassWord = prompt('당신의 password 입력하시오', password);
     if (unLockPassWord === password) {
       this.props.unPrivatePosts(this.state.id);
       this.setState({ privateMode: false });
@@ -47,8 +48,8 @@ export default class PostList extends React.Component {
   idComunity = (id, body, privateMode) => {
     this.setState({
       textAreaValue: body,
-      id: id,
-      privateMode: privateMode,
+      id,
+      privateMode,
     });
   };
 

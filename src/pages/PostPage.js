@@ -10,6 +10,5 @@ function PostPage() {
       <PostPageContainer />
     </PostPageProvider>
   );
-
 }
 export default withAuth(PostPage);
