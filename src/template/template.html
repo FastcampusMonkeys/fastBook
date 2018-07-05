@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>{{title}}</title>
+{% block css %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+{% endblock %}
+</head>
+<body class="{{bodyClass}}">
+<section id="wrap" class="{{wrapClass}}">
+    {% block header %}
+    {% endblock %}
+    
+    <section id="container" class="container" role="main">
+        {% block form_contents %}
+        {% endblock %}
+        
+        {% block memo_side %}
+        {% endblock %}
+
+        {% block memo_contents %}
+        {% endblock %}
+    </section>
+
+    {% block footer %}
+    {% endblock %}
+</section>
+
+{% block script %}
+{% endblock %}
+</body>
+</html>

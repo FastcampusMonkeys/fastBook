@@ -1,0 +1,35 @@
+<div class="form-contents">
+  <form action="from-contents__form">
+    <fieldset class="form-contents__fieldset">
+      {% if formItem == 'login' %}
+      <legend class="blind">로그인 입력폼</legend>
+      <label for="idInput">ID</label>
+      <input type="text" id="idInput" class="form-contents__fieldset-input" value="">
+      <label for="pwInput">PASSWORD</label>
+      <input type="password" id="pwInput" class="form-contents__fieldset-input" value="">
+      <button type="submit" class="button-g from-contents__login-button">Login</button>
+      <a class="button-g from-contents__signup-button">Sign up</a>
+      {% elif formItem == 'signup' %}
+      <legend class="blind">회원가입 입력폼</legend>
+      <label for="singupIdInput">ID</label>
+      <input type="text" id="singupIdInput" class="form-contents__fieldset-input" value="">
+      <label for="singupPwInput">PASSWORD</label>
+      <input type="password" id="singupPwInput" class="form-contents__fieldset-input" value="">
+      <label for="singupRePwInput">CONFIRM PASSWORD</label>
+      <input type="password" id="singupRePwInput" class="form-contents__fieldset-input" value="">
+      <button type="submit" class="button-g">Sign up for FASTBOOK</button>
+      <button type="button" class="button-g from-contents__cancel-button">Cancel</button>
+      {% elif formItem == 'setting' %}
+      <legend class="blind">정보변경 입력폼</legend>
+      <label for="settingPwInput">PASSWORD</label>
+      <input type="password" id="settingPwInput" class="form-contents__fieldset-input" value="">
+      <label for="newPwInput">NEW PASSWORD</label>
+      <input type="password" id="newPwInput" class="form-contents__fieldset-input" value="">
+      <label for="newRePwInput">CONFIRM PASSWORD</label>
+      <input type="password" id="newRePwInput" class="form-contents__fieldset-input" value="">
+      <button type="submit" class="button-g">Save</button>
+      <button type="button" class="button-g from-contents__cancel-button">Cancel</button>
+      {% endif %}
+    </fieldset>
+  </form>
+</div>
