@@ -106,13 +106,13 @@ export default class PostList extends React.Component {
                 <h2 className="blind">사용자 메뉴</h2>
 
                 <ul className="header-menu__btns">
-                  <li>
+                  {/* <li>
                     <button type="button" className="header-menu__button-colums">
                       <i className="fas fa-columns" title="리스트 펼침/닫기">
                       <span className="blind">리스트 펼침/닫기</span>
                       </i>
                     </button>
-                  </li>
+                  </li> */}
                     <li>
                     <PostForm onCreate={createPosts} />
                     </li>
@@ -163,7 +163,7 @@ export default class PostList extends React.Component {
           <h2 className="blind">메모 리스트</h2>
           <ul className="memo-side__list">
             {posts
-              .map(post => (
+              .map((post, i) => (
                 <PostItem
                   key={post.id}
                   {...post}
@@ -171,6 +171,7 @@ export default class PostList extends React.Component {
                   detailValue={this.detailValue}
                   updatePosts={this.updatePosts}
                   privatePosts={privatePosts}
+                  itemindex={i}
                   idComunity={this.idComunity}
                 />
               ))
@@ -182,19 +183,29 @@ export default class PostList extends React.Component {
             <fieldset className="memo-contents__fieldset">
               <legend className="blind">메모 입력 폼</legend>
               <label htmlFor="contentTextarea" className="blind">내용</label>
-              <textarea
-                className={this.state.privateMode ? "memo-contents__fieldset-textarea disabled" : "memo-contents__fieldset-textarea"}
-                key={posts.id}
-                id="contentTextarea"
-                name="detailContent"
-                cols="30"
-                rows="10"
-                value={this.state.privateMode ? 'Lock' : this.state.textAreaValue}
-                onChange={this.handleChangeView}
-                readOnly={this.state.privateMode ? true : false}
-                disabled={this.state.privateMode ? true : false}
-                placeholder="Write Here"
-              />
+              {this.state.privateMode ? (
+                <div className="memo-contents__fieldset-textarea memo-contents__lock">
+                  <p>
+                    <i className="fas fa-lock"></i>
+                    <strong>현재 메모는 잠겨있습니다.</strong>
+                  </p>
+                </div>
+              ) : (
+                <textarea
+                  className={this.state.privateMode ? "memo-contents__fieldset-textarea disabled" : "memo-contents__fieldset-textarea"}
+                  key={posts.id}
+                  id="contentTextarea"
+                  name="detailContent"
+                  cols="30"
+                  rows="10"
+                  value={this.state.privateMode ? 'Lock' : this.state.textAreaValue}
+                  onChange={this.handleChangeView}
+                  // readOnly={this.state.privateMode ? true : false}
+                  // disabled={this.state.privateMode ? true : false}
+                  placeholder="Write Here"
+                />
+              )}
+              
             </fieldset>
           </form>
           <a id="drag"></a>

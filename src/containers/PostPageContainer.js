@@ -30,7 +30,8 @@ export default class PostPageContainer extends React.Component {
             loading ? (
               <React.Fragment>
                 <div className="dimmed_layer">
-                  <strong>Loading :)</strong>
+                  <strong className="blind">Loading...</strong>
+                  <img src="loader.gif" />
                 </div>
                 <PostList
                   createPosts={createPosts}
@@ -39,20 +40,21 @@ export default class PostPageContainer extends React.Component {
                 />
               </React.Fragment>
             ) : (
-                <PostList
-                  posts={posts.filter(p =>
-                    p.body.includes(this.state.searchStr)
-                  )}
-                  createPosts={createPosts}
-                  deletePosts={deletePosts}
-                  updatePosts={updatePosts}
-                  privatePosts={privatePosts}
-                  unPrivatePosts={unPrivatePosts}
-                  {...posts}
-                  updateSearchStr={this.updateSearchStr}
-                />
+                <React.Fragment>
+                  <PostList
+                    posts={posts.filter(p =>
+                      p.body.includes(this.state.searchStr)
+                    )}
+                    createPosts={createPosts}
+                    deletePosts={deletePosts}
+                    updatePosts={updatePosts}
+                    privatePosts={privatePosts}
+                    unPrivatePosts={unPrivatePosts}
+                    {...posts}
+                    updateSearchStr={this.updateSearchStr}
+                  />
+                </React.Fragment>
               )
-
           )}
       </PostPageConsumer>
     );
