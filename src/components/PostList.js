@@ -9,16 +9,17 @@ export default class PostList extends React.Component {
     id: '',
     privateMode: '',
     password: '',
+    posts: [],
   };
 
   locking = () => {
-    password = prompt('password 입력하시오');
+    password = prompt('당신의 password 입력하시오');
     // this.setState({ password: lockPassWord });
     this.props.privatePosts(this.state.id);
   };
 
   unLocking = e => {
-    const unLockPassWord = prompt('password 입력하시오');
+    const unLockPassWord = prompt('당신의 password 입력하시오', password);
     if (unLockPassWord === password) {
       this.props.unPrivatePosts(this.state.id);
       this.setState({ privateMode: false });
@@ -41,10 +42,11 @@ export default class PostList extends React.Component {
   idComunity = (id, body, privateMode) => {
     this.setState({
       textAreaValue: body,
-      id: id,
-      privateMode: privateMode,
+      id,
+      privateMode,
     });
   };
+  componentDidMount() {}
   render() {
     const { posts, deletePosts, privatePosts } = this.props;
     return (
@@ -71,19 +73,22 @@ export default class PostList extends React.Component {
             rows="10"
             onChange={this.handleChangeView}
             value={this.state.privateMode ? 'Lock' : this.state.textAreaValue}
+            placeholder="글 작성하시려면 원하시는 리스트를 클릭하세요"
           />
         </div>
-        <button
-          onClick={e => {
-            deletePosts(this.state.id);
-          }}
-        >
-          Delete
-        </button>
         {this.state.privateMode ? (
           <button onClick={this.unLocking}>UnLock</button>
         ) : (
-          <button onClick={this.locking}>Lock</button>
+          <div>
+            <button
+              onClick={e => {
+                deletePosts(this.state.id);
+              }}
+            >
+              Delete
+            </button>
+            <button onClick={this.locking}>Lock</button>
+          </div>
         )}
       </div>
     );

@@ -13,9 +13,7 @@ export default class PostItem extends React.Component {
     return (
       <div onClick={this.handleChangeView}>
         <li key={id}>
-          <p>
-            {privateMode ? <strong>잠겨있음</strong> : <strong>{body}</strong>}
-          </p>
+          <p>{privateMode ? <strong>Lock</strong> : <strong>{body}</strong>}</p>
           {submitTime}
         </li>
       </div>
