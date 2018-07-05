@@ -39,7 +39,8 @@ export default class PostPageContainer extends React.Component {
           createPosts,
           deletePosts,
           updatePosts,
-          privatePosts
+          privatePosts,
+          unPrivatePosts,
         }) => (
           <section id="wrap">
             <header className="header">
@@ -153,6 +154,7 @@ export default class PostPageContainer extends React.Component {
                   deletePosts={deletePosts}
                   updatePosts={updatePosts}
                   privatePosts={privatePosts}
+                  unPrivatePosts={unPrivatePosts}
                   {...posts}
                 />
               )}

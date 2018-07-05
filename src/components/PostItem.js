@@ -1,12 +1,12 @@
 import React from 'react';
 
 export default class PostItem extends React.Component {
-  // detailContent = e => {
-  //   this.props.detailValue(this.props.body);
-  // };
   handleChangeView = e => {
-    this.props.idComunity(this.props.id, this.props.body);
-    this.props.detailValue(this.props.body);
+    this.props.idComunity(
+      this.props.id,
+      this.props.body,
+      this.props.privateMode
+    );
   };
 
   render() {
