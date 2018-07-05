@@ -6,14 +6,13 @@ export default class PostPageContainer extends React.Component {
   state = {
     id: '',
     searchStr: '',
-    keyword: ''
+    keyword: '',
   };
   updateSearchStr = searchStr => {
     this.setState({
       searchStr,
     });
   };
-
 
   render() {
     return (
