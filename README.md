@@ -1,64 +1,78 @@
-# FastBook
+# FastBook 
+![release-badge](https://img.shields.io/badge/release-1.0.0-yellow.svg)
+![npm-verson-badge](https://img.shields.io/badge/npm-5.6.0-orange.svg)
+![deploy-badge](https://img.shields.io/badge/deploy-success-blue.svg)
+![license-badge](https://img.shields.io/badge/license-fastMonkeys-brightgreen.svg)
+![fastcampus-badge](https://img.shields.io/badge/copyright-fastCampus-red.svg)
 
-## fastMonkeys 의 2th 프로젝트 입니다.
+## by fastMonkeys
 
-## Members
+## member
 
-- 손승현
-- 정재한
-- 김동원
+- [손승현](https://github.com/OnloadMyBrain)
+- [정재한](https://github.com/jaehanjung)
+- [김동원](https://github.com/gimdongwon)
 
-### 기능
+## Browser Support
 
-macbook 의 메모장 앱을 구현한 웹 어플리케이션입니다.
+| ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Latest ✔                                                                                 | Latest ✔                                                                                    | Latest ✔                                                                                 | Latest ✔                                                                              | Latest ✔                                                                           | 8+ ✔                                                                                                                         |
 
-- 주요기능
+## simple하게 사용할 수 있는 fastMonkeys들의 메모장 어플리케이션입니다.
 
-  - 로그인을 통해서 자기 메모만을 볼수 있는 기능
-  - CRUD 기능 구현 (통신)
-  - 리스트 만들기
-  - 화면 나누기
+ 여러분의 개인 및 업무 프로젝트 정리 방법을 바꾸어드립니다. 지금 바로 노트를 적고, 할 일 목록을 만들고, 온라인에서 찾은 정보를 fastbook에 저장해 보세요. 휴대폰, 태블릿, 컴퓨터의 모든 정보는 자동으로 인터넷에 동기화됩니다.
 
-- 추가기능
+ 생활을 정리하세요
+fastbook는 수월하게 업무를 정리할 수 있는 도구들을 제공합니다:
+• 아이디어를 쓰고, 모으고, 검색 가능한 노트, 노트북, 할 일 목록으로 담아두세요
+• fastbook를 디지털 메모장 겸 서식 지정이 간편한 워드 프로세서로 사용해 떠오르는 모든 생각을 담아두세요
 
-  - 저장버튼 없애기
-  - 잠금기능
-  - 이미지 넣기
-  - 메모 검색(제목과내용)
-  - SNS 공유기능
+어디서나 동기화하세요
+fastbook는 장치에서 콘텐츠를 인터넷 동기화하는 기능을 제공합니다:
+• 모든 컴퓨터, 휴대폰, 태블릿에서 모든 자료를 자동으로 동기화합니다
+• 한 장치에서 작업을 시작한 후 다른 장치에서 끊김 없이 이어서 작업하세요
+• 개인정보 보호를 위해 암호 잠금을 설정하세요
 
-- Page
-  - Login page, memo page, register page
+아이디어를 공유하세요
+fastbook는 공유, 논의, 생산적 협업을 위한 도구들을 제공합니다:
+• 일을 완수하는데 도움이 될 사람들과 함께 창작, 공유하고 의견을 나누세요. 모두 하나의 앱 안에서 가능합니다.
+• 다수의 참가자들에게 각기 다른 부분을 작업하게 해 프로젝트를 빠르게 진행하세요
 
-- date
+일상 속의 fastbook
+• 개인 체크리스트를 만들어 생각을 정리하세요
+• 생산성을 발휘하는데 필요한 모든 생각을 모으고, 보관하세요
+• 휴가, 결혼식, 파티 등의 행사를 계획하세요
 
-| 월   | 화   | 수          | 목         | 금   | 토   | 일   |
-| --- | --- | ---------- | --------- | --- | --- | --- |
-| 25  | 26  | 27 (3시 회의) | 28(중간 점검) | 29  | 30  | 1   |
-| 2   | 3   | 4          | 5         | 6   |     |
+업무 속의 fastbook
+• 안건을 만들고, 메모를 작성하고, 프레젠테이션을 구성하세요
+• 팀 회의 중 떠오른 의견과 생각으로 문서에 주석을 추가한 다음, 동료들과 공유하세요
+• 다수의 참가자들에게 접근 권한을 부여하고 각기 다른 부분을 작업하게 해 프로젝트를 빠르게 진행시키고 생산성을 극대화하세요
 
-### 개인 목표
+학업을 위한 fastbook
+• 중요한 생각을 놓치지 않도록 강의 노트를 작성하세요
+• 웹에서 학술 연구에 필요한 기사를 스크랩하고 강조 표시하세요
+• 공동 연구 활동을 더 효율적으로 계획하고 협업하세요
 
-손승현 : 순수 마크업 페이지를 React 프리젠테이션 컴포넌트로 제대로 구현해보기
+react-create-app을 이용하여 구현
 
-정재한 : 협업을통해 각자에게 주어진 담당을 기간내에 완성하자!
+## fastBook 기능
 
-김동원 : 내가 제안한 주제인 만큼 책임감을 가지고 열심히 해서 재미있는 팀워크를 보여주고 꼭 완성하도록 하겠습니다.
+- Mac OS에 설치된 메모 앱을 motive 로 구현.
+- 심플한 UI구성
+- 로그인을 통해서 자기 자신만의 메모장 이용 가능.
+- 잠금 기능을 통한 part별 보안 강화.
+- 자동 저장을 통한 빠른 기능.
+- 생성 날짜 및 수정 날짜를 통해 재빠른 업무 시점 파악 가능.
+- 메모 검색 기능을 통하여 찾고 싶은 메모 빠른 탐색 가능.
 
-### 팀 목표
+## 개발 기간
 
-계획을 해서 일해보는 연습 => 각자 맡은 역할 28 일 까지 해결하기
+18.06.25 ~ 18.07.06
 
-브랜치 전략 : master branch 에서 fork 후에 clone 하고 push 하기
+## 협업 도구
 
-commit : 한글로 커밋메세지를 적되 내용을 자세히 적기
-
-### 분업
-
-- [x] Github 초기설정 및 세팅 - 동원
-- [x] 레이아웃 구성 - 승현님
-- [x] 로그인 : 재한님
-- [x] 리스트 불러오기: 동원
-- [ ] 메모장 crud 통신하기 : 동원
-
-## text
+- GitHub
+- HangOut
+- Trello
+- Slack
