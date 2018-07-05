@@ -115,108 +115,118 @@ export default class PostList extends React.Component {
 
             <div className="header-menu">
               <h2 className="blind">사용자 메뉴</h2>
-                <ul className="header-menu__btns">
-                  {/* <li>
+              <ul className="header-menu__btns">
+                {/* <li>
                     <button type="button" className="header-menu__button-colums">
                       <i className="fas fa-columns" title="리스트 펼침/닫기">
                       <span className="blind">리스트 펼침/닫기</span>
                     </i>
                   </button>
                   </li> */}
-                    <li>
-                    <PostForm onCreate={createPosts} />
-                    </li>
-                    <li>
-                      {this.state.privateMode ? (
-                      <button type="button" onClick={this.unLocking}>
-                        <i className="fas fa-unlock-alt" title="메모 잠금 해제">
+                <li>
+                  <PostForm onCreate={createPosts} />
+                </li>
+                <li>
+                  {this.state.privateMode ? (
+                    <button type="button" onClick={this.unLocking}>
+                      <i className="fas fa-unlock-alt" title="메모 잠금 해제">
                         <span className="blind">메모 잠금 해제</span>
-                        </i>
-                      </button>
-                      ) : (
-                        <button type="button" onClick={this.locking}>
-                          <i className="fas fa-lock" title="메모 잠금">
-                            <span className="blind">메모 잠금</span>
-                          </i>
-                        </button>
-                      )}
-                    </li>
-                    <li>
-                        <button type="button"
-                            onClick={e => {
-                              deletePosts(this.state.id);
-                            }}
-                          >
-                            <i className="fas fa-trash-alt" title="메모 삭제">
-                              <span className="blind">메모 삭제</span>
-                            </i>
-                        </button>
-                    </li>
-                    <li>
-                      <button type="button">
-                        <i className="fas fa-cog" title="정보 변경">
-                        <span className="blind">정보 변경</span>
-                        </i>
-                        </button>
-                    </li>
-                    <li>
-                          <LogoutBtnContainer />
-                    </li>
-                </ul>
-                <SearchForm onSubmit={this.props.updateSearchStr} />
+                      </i>
+                    </button>
+                  ) : (
+                    <button type="button" onClick={this.locking}>
+                      <i className="fas fa-lock" title="메모 잠금">
+                        <span className="blind">메모 잠금</span>
+                      </i>
+                    </button>
+                  )}
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={e => {
+                      deletePosts(this.state.id);
+                    }}
+                  >
+                    <i className="fas fa-trash-alt" title="메모 삭제">
+                      <span className="blind">메모 삭제</span>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button type="button">
+                    <i className="fas fa-cog" title="정보 변경">
+                      <span className="blind">정보 변경</span>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <LogoutBtnContainer />
+                </li>
+              </ul>
+              <SearchForm onSubmit={this.props.updateSearchStr} />
             </div>
           </header>
 
           <section id="container" className="container" role="main">
-        <div className="memo-side">
-          <h2 className="blind">메모 리스트</h2>
-          <ul className="memo-side__list">
-            {posts
-              .map((post, i) => (
-                <PostItem
-                  key={post.id}
-                  {...post}
-                  deletePosts={deletePosts}
-                  detailValue={this.detailValue}
-                  updatePosts={this.updatePosts}
-                  privatePosts={privatePosts}
-                  itemindex={i}
-                  idComunity={this.idComunity}
-                />
-              ))
-              .reverse()}
-          </ul>
-        </div>
-        <div className="memo-contents">
-          <form className="memo-contents__form">
-            <fieldset className="memo-contents__fieldset">
-              <legend className="blind">메모 입력 폼</legend>
-              <label htmlFor="contentTextarea" className="blind">내용</label>
-              {this.state.privateMode ? (
-                <div className="memo-contents__fieldset-textarea memo-contents__lock">
-                  <p>
-                    <i className="fas fa-lock"></i>
-                    <strong>현재 메모는 잠겨있습니다.</strong>
-                  </p>
-                </div>
-              ) : (
-                <textarea
-                  className={this.state.privateMode ? "memo-contents__fieldset-textarea disabled" : "memo-contents__fieldset-textarea"}
-                  key={posts.id}
-                  id="contentTextarea"
-                  name="detailContent"
-                  cols="30"
-                  rows="10"
-                  value={this.state.privateMode ? 'Lock' : this.state.textAreaValue}
-                  onChange={this.handleChangeView}
-                  placeholder="Write Here"
-                />
-              )}
-              
-            </fieldset>
-          </form>
-          <a id="drag"></a>
-        </div>
+            <div className="memo-side">
+              <h2 className="blind">메모 리스트</h2>
+              <ul className="memo-side__list">
+                {posts
+                  .map((post, i) => (
+                    <PostItem
+                      key={post.id}
+                      {...post}
+                      deletePosts={deletePosts}
+                      detailValue={this.detailValue}
+                      updatePosts={this.updatePosts}
+                      privatePosts={privatePosts}
+                      itemindex={i}
+                      idComunity={this.idComunity}
+                    />
+                  ))
+                  .reverse()}
+              </ul>
+            </div>
+            <div className="memo-contents">
+              <form className="memo-contents__form">
+                <fieldset className="memo-contents__fieldset">
+                  <legend className="blind">메모 입력 폼</legend>
+                  <label htmlFor="contentTextarea" className="blind">
+                    내용
+                  </label>
+                  {this.state.privateMode ? (
+                    <div className="memo-contents__fieldset-textarea memo-contents__lock">
+                      <p>
+                        <i className="fas fa-lock" />
+                        <strong>현재 메모는 잠겨있습니다.</strong>
+                      </p>
+                    </div>
+                  ) : (
+                    <textarea
+                      className={
+                        this.state.privateMode
+                          ? 'memo-contents__fieldset-textarea disabled'
+                          : 'memo-contents__fieldset-textarea'
+                      }
+                      key={posts.id}
+                      id="contentTextarea"
+                      name="detailContent"
+                      cols="30"
+                      rows="10"
+                      value={
+                        this.state.privateMode
+                          ? 'Lock'
+                          : this.state.textAreaValue
+                      }
+                      onChange={this.handleChangeView}
+                      placeholder="Write Here"
+                    />
+                  )}
+                </fieldset>
+              </form>
+              <a id="drag" />
+            </div>
           </section>
           <footer id="footer" role="contentinfo">
             <small className="footer_copyright">
