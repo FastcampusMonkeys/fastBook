@@ -61,6 +61,13 @@ input:-webkit-autofill {
 	-webkit-box-shadow: 0 0 0 1000px white inset;
 }
 
+.disabled {
+	background: #eee!important;
+	font-size:30px;
+	line-height: 2
+	
+}
+
 .button-g {
 	display: inline-block;
 	vertical-align: top;

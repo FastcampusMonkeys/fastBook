@@ -15,11 +15,6 @@ export default class PostForm extends React.Component {
   };
 
   render() {
-    const buttonStyle = {
-      position: 'absolute',
-      top: '100px',
-      left: '500px'
-    }
     return (
       <button onClick={this.handleButtonClick}>
         <i className="fas fa-edit" title="메모 추가">
