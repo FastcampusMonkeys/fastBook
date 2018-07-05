@@ -14,13 +14,11 @@ export default class PostItem extends React.Component {
     return (
       <li key={id} onClick={this.handleChangeView}>
         <a href="#none" className="memo-side__link">
-          {
-            privateMode ? (
-              <strong className="memo-side__title">잠겨있음</strong>
-            ) : (
-                <strong className="memo-side__title">{body}</strong>
-              )
-          }
+          {privateMode ? (
+            <strong className="memo-side__title">잠겨있음</strong>
+          ) : (
+            <strong className="memo-side__title">{body}</strong>
+          )}
           <span className="memo-side__date">{submitTime}</span>
         </a>
       </li>

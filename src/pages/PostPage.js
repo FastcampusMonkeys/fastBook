@@ -6,7 +6,7 @@ import PostPageProvider from '../contexts/PostPageContext';
 
 function PostPage() {
   return (
-    <PostPageProvider >
+    <PostPageProvider>
       <PostPageContainer />
     </PostPageProvider>
   );
