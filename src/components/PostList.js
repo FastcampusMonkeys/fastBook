@@ -9,6 +9,7 @@ export default class PostList extends React.Component {
     id: '',
     privateMode: '',
     password: '',
+    posts: null,
   };
 
   locking = () => {
@@ -45,6 +46,12 @@ export default class PostList extends React.Component {
       privateMode: privateMode,
     });
   };
+  postsset = () => {
+    const { posts } = this.props;
+    this.setState({
+      posts
+    })
+  }
   render() {
     const { posts, deletePosts, privatePosts } = this.props;
     return (
@@ -83,8 +90,8 @@ export default class PostList extends React.Component {
         {this.state.privateMode ? (
           <button onClick={this.unLocking}>UnLock</button>
         ) : (
-          <button onClick={this.locking}>Lock</button>
-        )}
+            <button onClick={this.locking}>Lock</button>
+          )}
       </div>
     );
   }
