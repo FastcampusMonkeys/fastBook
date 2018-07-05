@@ -56,9 +56,9 @@ export default class PostList extends React.Component {
     }
     return (
       <React.Fragment>
-        <div class="memo-side">
-          <h2 class="blind">메모 리스트</h2>
-          <ul class="memo-side__list">
+        <div className="memo-side">
+          <h2 className="blind">메모 리스트</h2>
+          <ul className="memo-side__list">
             {posts
               .map(post => (
                 <PostItem
@@ -75,10 +75,10 @@ export default class PostList extends React.Component {
           </ul>
         </div>
         <div className="memo-contents">
-          <form class="memo-contents__form">
-            <fieldset class="memo-contents__fieldset">
-              <legend class="blind">메모 입력 폼</legend>
-              <label for="contentTextarea" class="blind">내용</label>
+          <form className="memo-contents__form">
+            <fieldset className="memo-contents__fieldset">
+              <legend className="blind">메모 입력 폼</legend>
+              <label htmlFor="contentTextarea" className="blind">내용</label>
               <textarea
                 className="memo-contents__fieldset-textarea"
                 key={posts.id}
@@ -101,7 +101,7 @@ export default class PostList extends React.Component {
             }}
           >
             Delete
-        </button>
+          </button>
           {this.state.privateMode ? (
             <button onClick={this.unLocking}>UnLock</button>
           ) : (
