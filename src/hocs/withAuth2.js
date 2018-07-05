@@ -7,9 +7,8 @@ export default function withAuth(WrappedComponent) {
       return localStorage.getItem('token') ? (
         <Redirect to="/posts" />
       ) : (
-
-          <WrappedComponent {...this.props} />
-        );
+        <WrappedComponent {...this.props} />
+      );
     }
   };
 }

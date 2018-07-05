@@ -16,8 +16,7 @@ export default class PostItem extends React.Component {
           <p>
             {privateMode ? <strong>잠겨있음</strong> : <strong>{body}</strong>}
           </p>
-          <span className="memo-side__date">{submitTime}</span>
-
+          <span>{submitTime}</span>
         </li>
       </div>
     );

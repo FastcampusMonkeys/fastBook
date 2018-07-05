@@ -3,7 +3,7 @@ import PostList from '../components/PostList';
 import { PostPageConsumer } from '../contexts/PostPageContext';
 import PostForm from '../components/PostForm';
 import SearchForm from '../components/SearchForm';
-import HeaderForm from '../components/HeaderForm';
+
 export default class PostPageContainer extends React.Component {
   state = {
     searchStr: '',
@@ -27,27 +27,27 @@ export default class PostPageContainer extends React.Component {
           privatePosts,
           unPrivatePosts,
         }) => (
-            <div>
-              <SearchForm onSubmit={this.updateSearchStr} />
-              {loading ? (
-                <div>Loading..</div>
-              ) : (
-                  <div>
-                    <PostList
-                      posts={posts.filter(p =>
-                        p.body.includes(this.state.searchStr)
-                      )}
-                      deletePosts={deletePosts}
-                      updatePosts={updatePosts}
-                      privatePosts={privatePosts}
-                      unPrivatePosts={unPrivatePosts}
-                      {...posts}
-                    />
-                  </div>
-                )}
-              <PostForm onCreate={createPosts} />
-            </div>
-          )}
+          <div>
+            <SearchForm onSubmit={this.updateSearchStr} />
+            {loading ? (
+              <div>Loading..</div>
+            ) : (
+              <div>
+                <PostList
+                  posts={posts.filter(p =>
+                    p.body.includes(this.state.searchStr)
+                  )}
+                  deletePosts={deletePosts}
+                  updatePosts={updatePosts}
+                  privatePosts={privatePosts}
+                  unPrivatePosts={unPrivatePosts}
+                  {...posts}
+                />
+              </div>
+            )}
+            <PostForm onCreate={createPosts} />
+          </div>
+        )}
       </PostPageConsumer>
     );
   }

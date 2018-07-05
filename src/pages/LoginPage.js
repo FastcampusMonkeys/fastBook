@@ -5,10 +5,8 @@ import LoginFormContainer from '../containers/LoginFormContainer';
 function LoginPage() {
   return (
     <React.Fragment>
-
       <LoginFormContainer />
-
     </React.Fragment>
   );
 }
-export default withAuth2(LoginPage)
+export default withAuth2(LoginPage);

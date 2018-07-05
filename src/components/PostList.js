@@ -78,7 +78,6 @@ export default class PostList extends React.Component {
         {this.state.privateMode ? (
           <button onClick={this.unLocking}>UnLock</button>
         ) : (
-
           <div>
             <button
               onClick={e => {
