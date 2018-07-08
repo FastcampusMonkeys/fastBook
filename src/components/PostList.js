@@ -116,13 +116,6 @@ export default class PostList extends React.Component {
             <div className="header-menu">
               <h2 className="blind">사용자 메뉴</h2>
               <ul className="header-menu__btns">
-                {/* <li>
-                    <button type="button" className="header-menu__button-colums">
-                      <i className="fas fa-columns" title="리스트 펼침/닫기">
-                      <span className="blind">리스트 펼침/닫기</span>
-                    </i>
-                  </button>
-                  </li> */}
                 <li>
                   <PostForm onCreate={createPosts} />
                 </li>
