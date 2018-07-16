@@ -1,7 +1,7 @@
 import React from 'react';
 import withAuth2 from '../hocs/withAuth2';
 import LoginFormContainer from '../containers/LoginFormContainer';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 function LoginPage() {
   return (
     <React.Fragment>

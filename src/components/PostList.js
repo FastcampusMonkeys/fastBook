@@ -37,7 +37,7 @@ export default class PostList extends React.Component {
     this.setState({
       textAreaValue: e.target.value,
     });
-    const autoSavePost = debounce(this.onUpdate, 2000);
+    const autoSavePost = debounce(this.onUpdate, 10000);
     autoSavePost();
   };
 
