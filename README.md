@@ -1,4 +1,7 @@
-# FastBook 
+# FastBook
+
+![preview](./preview.png)
+
 ![release-badge](https://img.shields.io/badge/release-1.0.0-yellow.svg)
 ![npm-verson-badge](https://img.shields.io/badge/npm-5.6.0-orange.svg)
 ![deploy-badge](https://img.shields.io/badge/deploy-success-blue.svg)
